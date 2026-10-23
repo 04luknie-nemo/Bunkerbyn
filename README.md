@@ -66,15 +66,24 @@ En station, en tunnel och en ytkarta. Inga fraktionskrig, ingen öppen värld oc
 - Inget "Metro" i namnet.
 - Inga namn, figurer eller monsterdesigner från Metro-serien.
 - Bara egna assets eller assets med tydlig licens, till exempel CC0 från Kenney eller OpenGameArt.
-- Varje assets källa listas i `ASSETS.md`.
+- Varje assets källa listas i [ASSETS.md](ASSETS.md).
 
 ## Kom igång
 
-Kräver .NET 8 SDK.
+Se [setup/README.md](setup/README.md) för installation av .NET 8, MonoGame och MGCB-editorn på Ubuntu.
 
-```bash
-dotnet tool install --global dotnet-mgcb-editor
-dotnet run
-```
+## Arbetssätt med AI
 
-Projektet saknar kod än så länge. Instruktionerna gäller när det första MonoGame-projektet finns på plats.
+Reglerna för AI-assistenter står i [AGENTS.md](AGENTS.md). [docs/AI-ARBETSSATT.md](docs/AI-ARBETSSATT.md) beskriver nivåerna av hjälp, etapperna och AI-loggen.
+
+## Filer i roten
+
+| Fil | Innehåll |
+|---|---|
+| `AGENTS.md` | Regler för alla AI-verktyg |
+| `CLAUDE.md` | Pekar på AGENTS.md |
+| `ASSETS.md` | Källa och licens för varje asset |
+| `docs/AI-ARBETSSATT.md` | Arbetssätt och AI-logg |
+| `setup/README.md` | Installation och körning |
+| `.editorconfig` | Formateringsregler för C# |
+| `.github/workflows/build.yml` | Bygge och formatkontroll på varje pull request |

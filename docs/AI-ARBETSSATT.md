@@ -1,0 +1,85 @@
+# Arbetssätt med AI
+
+Det här dokumentet beskriver hur jag använder AI-assistenter i projektet. Det gäller oavsett verktyg: Claude, Copilot, Cursor, ChatGPT eller något annat. Målet är att jag ska kunna förklara varje rad i koden. Om jag inte kan det har AI:n gjort för mycket.
+
+## Roller
+
+| Jag                                    | AI-assistenten                                                  |
+| -------------------------------------- | --------------------------------------------------------------- |
+| Skriver scener, entiteter och logik    | Förklarar mönster och begrepp innan jag skriver                 |
+| Bestämmer struktur, namn och spelregler | Granskar min kod och pekar på problem                           |
+| Granskar och godkänner all kod från AI:n | Föreslår kantfall jag missat                                    |
+|                                        | Skriver boilerplate när jag ber om det: konfiguration, CI, setup |
+
+## Tre nivåer av hjälp
+
+Jag väljer nivå för varje uppgift och säger det i början.
+
+1. Förklara. AI:n förklarar utan att skriva lösningen. Korta exempel på ett mönster är okej.
+2. Granska. Jag skriver koden. AI:n kommenterar men skriver inte om den.
+3. Ta över. AI:n skriver koden. Jag granskar den enligt checklistan nedan innan den mergas.
+
+Nivå 1 och 2 är standard. Nivå 3 använder jag för kod jag redan förstår, eller när jag vill se ett förslag att jämföra med.
+
+## Arbeta i små etapper
+
+En etapp är en sak, till exempel "gubben går en ruta åt gången". Varje etapp följer samma steg:
+
+1. Jag beskriver vad som ska byggas.
+2. AI:n ställer frågor om regler och kantfall.
+3. Koden skrivs, av mig eller av AI:n beroende på nivå.
+4. Koden hamnar på en egen gren och i en pull request.
+5. Jag granskar varje fil.
+6. Bygget och formateringen går igenom i GitHub Actions.
+7. Merge till main.
+
+En etapp ska gå att granska på cirka 15 minuter. Blir den större delar jag upp den.
+
+## När AI:n tar över
+
+- Koden hamnar på en egen gren, aldrig direkt mot main.
+- Pull requesten beskriver vad som ändrats och varför, och att AI skrev koden.
+- Jag granskar varje fil innan merge.
+- En rad läggs till i AI-loggen nedan, med PR-numret. Kan verktyget inte skriva i repot, lägger jag till raden själv.
+
+## Verktyg och instruktionsfiler
+
+Reglerna för AI-assistenter står i AGENTS.md i roten. Olika verktyg hittar dem på olika sätt:
+
+| Verktyg                                    | Läser                                       |
+| ------------------------------------------ | ------------------------------------------- |
+| Claude Code                                | CLAUDE.md, som pekar på AGENTS.md           |
+| GitHub Copilot, Cursor, Codex              | AGENTS.md                                   |
+| Gemini CLI                                 | GEMINI.md, eller AGENTS.md om det ställs in |
+| ChatGPT, Claude eller Gemini i webbläsaren | Ingenting i repot                           |
+
+Använder du en webbchatt: klistra in innehållet i AGENTS.md i början av chatten, och lägg själv till raden i AI-loggen.
+
+Ändra reglerna i AGENTS.md, inte i CLAUDE.md. Då gäller de för alla verktyg.
+
+## Checklista vid granskning av AI-kod
+
+- [ ] Jag kan förklara vad varje rad gör.
+- [ ] Jag kan förklara varför lösningen ser ut så här, och inte på ett annat sätt.
+- [ ] Koden följer mappstrukturen i README.md.
+- [ ] Inga nya NuGet-paket har lagts till utan att jag vet varför.
+- [ ] Nya assets finns i ASSETS.md med källa och licens.
+- [ ] Bygget och formateringen går igenom i GitHub Actions.
+
+Om en punkt inte stämmer frågar jag AI:n tills den gör det, eller skriver om koden själv.
+
+## Bra frågor att ställa
+
+- "Förklara utan kod hur jag borde lösa X."
+- "Visa ett kort exempel på mönstret, inte min lösning."
+- "Granska min kod, peka på problem men skriv inte om den."
+- "Ställ frågor tills jag själv ser felet."
+- "Vilka kantfall saknas?"
+
+## AI-logg
+
+Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen PR länkar till pull requesten där koden granskades.
+
+| Datum      | Etapp        | Verktyg     | Nivå    | Vad AI:n gjorde                                                                                                                                         | PR  |
+| ---------- | ------------ | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 2026-10-23 | Projektstart | Claude Code | Ta över | Skrev README, CLAUDE.md, AGENTS.md, ASSETS.md, det här dokumentet, setup/README.md, .editorconfig, .gitignore, .vscode och build.yml med Household som förebild | –   |
