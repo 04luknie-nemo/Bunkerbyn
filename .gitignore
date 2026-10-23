@@ -1,8 +1,14 @@
+# Godot
+.godot/
+export_presets.cfg
+*.translation
+
+# .NET
 bin/
 obj/
 .vs/
 *.user
 *.suo
-Content/bin/
-Content/obj/
-*.aseprite~
+
+# Blender
+*.blend1

@@ -6,7 +6,7 @@ Det här dokumentet beskriver hur jag använder AI-assistenter i projektet. Det 
 
 | Jag                                    | AI-assistenten                                                  |
 | -------------------------------------- | --------------------------------------------------------------- |
-| Skriver scener, entiteter och logik    | Förklarar mönster och begrepp innan jag skriver                 |
+| Skriver scener, simulering och logik   | Förklarar mönster och begrepp innan jag skriver                 |
 | Bestämmer struktur, namn och spelregler | Granskar min kod och pekar på problem                           |
 | Granskar och godkänner all kod från AI:n | Föreslår kantfall jag missat                                    |
 |                                        | Skriver boilerplate när jag ber om det: konfiguration, CI, setup |
@@ -61,7 +61,7 @@ Använder du en webbchatt: klistra in innehållet i AGENTS.md i början av chatt
 
 - [ ] Jag kan förklara vad varje rad gör.
 - [ ] Jag kan förklara varför lösningen ser ut så här, och inte på ett annat sätt.
-- [ ] Koden följer mappstrukturen i README.md.
+- [ ] Koden följer mappstrukturen i README.md. Simuleringen använder inga Godot-typer.
 - [ ] Inga nya NuGet-paket har lagts till utan att jag vet varför.
 - [ ] Nya assets finns i ASSETS.md med källa och licens.
 - [ ] Bygget och formateringen går igenom i GitHub Actions.
@@ -83,3 +83,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | Datum      | Etapp        | Verktyg     | Nivå    | Vad AI:n gjorde                                                                                                                                         | PR  |
 | ---------- | ------------ | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | 2026-10-23 | Projektstart | Claude Code | Ta över | Skrev README, CLAUDE.md, AGENTS.md, ASSETS.md, det här dokumentet, setup/README.md, .editorconfig, .gitignore, .vscode och build.yml med Household som förebild | –   |
+| 2026-10-23 | Designbeslut | Claude Code | Ta över | Skrev docs/DESIGN.md efter grillningen. Bytte MonoGame och pixelart mot Godot 4 och low poly 3D i README, AGENTS.md, setup/README.md och .gitignore. Byggde två prototyper i webbläsaren, i 2D och i 3D, som inte ligger i repot | –   |

@@ -1,6 +1,6 @@
 # Kom igång
 
-Instruktionerna gäller Ubuntu Linux. Projektet saknar kod än så länge, så stegen under Kör spelet gäller när det första MonoGame-projektet finns.
+Instruktionerna gäller Ubuntu Linux. Projektet saknar kod än så länge, så stegen under Skapa projektet görs en gång när arbetet börjar.
 
 ## 1. .NET 8 SDK
 
@@ -12,37 +12,43 @@ dotnet --version
 
 Versionen ska börja med `8.`.
 
-## 2. MonoGame-mallar och MGCB-editorn
+## 2. Godot 4 med .NET
+
+1. Ladda ner **Godot Engine - .NET** för Linux från https://godotengine.org/download/linux/. Välj den senaste stabila 4.x-versionen. Den vanliga versionen utan .NET saknar stöd för C#.
+2. Packa upp zip-filen, till exempel till `~/Program/Godot`.
+3. Starta den körbara filen i mappen.
+
+## 3. Blender
 
 ```bash
-dotnet new install MonoGame.Templates.CSharp
-dotnet tool install --global dotnet-mgcb-editor
-mgcb-editor --register
+sudo snap install blender --classic
 ```
 
-MGCB-editorn bygger sprites, ljud och typsnitt i `Content/`.
+Exportera modeller som glTF binary (`.glb`) till mappen `models/`. Godot importerar dem direkt.
 
-## 3. Skapa projektet
+## 4. Skapa projektet
 
-Körs en gång, från rotmappen:
+Görs en gång:
+
+1. Starta Godot och skapa ett nytt projekt i rotmappen för repot, med renderaren Forward+.
+2. Skapa ett första C#-skript i Godot. Då skapar Godot `Bunkerbyn.csproj` och `Bunkerbyn.sln`.
+3. Committa `project.godot`, `.csproj`, `.sln` och alla `.import`-filer. Mappen `.godot/` ignoreras.
+
+## 5. Kör spelet
+
+Tryck F5 i Godot, eller bygg C#-koden från terminalen:
 
 ```bash
-dotnet new mgdesktopgl -n Bunkerbyn -o .
+dotnet build
 ```
 
-## 4. Kör spelet
+## Gratis modeller
 
-```bash
-dotnet restore
-dotnet tool restore
-dotnet run
-```
+- Kenney: https://kenney.nl/assets, CC0.
+- Quaternius: https://quaternius.com, CC0, med animerade figurer.
+- Mixamo: gratis animationer från Adobe som får användas i spel. Läs villkoren innan du lägger till dem.
 
-## Grafik
-
-- Aseprite eller LibreSprite.
-- 16x16 pixlar per ruta.
-- Spara som PNG i `Content/` och lägg till filen i ASSETS.md.
+Varje fil läggs till i ASSETS.md med källa och licens.
 
 ## Formatering
 
@@ -56,4 +62,4 @@ Utan flaggan rättar kommandot filerna. I VS Code formaterar tillägget C# Dev K
 
 ## CI
 
-`.github/workflows/build.yml` kör `dotnet build` och `dotnet format --verify-no-changes` på varje pull request mot main. Stegen hoppas över tills det finns en `.csproj`.
+`.github/workflows/build.yml` kör `dotnet build` och `dotnet format --verify-no-changes` på varje pull request mot main. Godot-projektet byggs med paketet `Godot.NET.Sdk` från NuGet, så CI behöver inte Godot installerat. Stegen hoppas över tills det finns en `.csproj`.

@@ -1,76 +1,87 @@
 # Bunkerbyn (arbetsnamn)
 
-Ett 2D-spel i C# med MonoGame. Du bor i en tunnelbanestation efter apokalypsen. På dagen bygger du upp stationen. På natten går du ut i tunnlarna och upp på ytan.
+En kolonisimulator med överlevnad i Stockholms tunnelbana, sju år efter ett kärnvapenkrig. Du styr stationen Kungsträdgården och dess invånare. På stationen ger du order. I tunnlarna och på ytan styr du en utvald invånare direkt.
+
+Byggs i Godot 4 med C# och low poly 3D.
 
 ## Koncept
 
-Inspiration: Metro, Stardew Valley och Haunted Chocolatier.
+Inspiration: This War of Mine, RimWorld, Frostpunk och Stardew Valley.
 
-**Dag på stationen**
+**På stationen**
 - Odla svamp och rotfrukter under lysrör.
-- Föd upp djur.
-- Laga mat.
-- Reparera generatorn.
-- Lär känna invånarna.
+- Håll igång generatorn, vattnet och luften.
+- Invånare med behov, färdigheter, personlighet och roller.
+- En chef, moral, val och risk för uppror.
 
-**Natt i tunnlar och på ytan**
+**I tunnlarna och på ytan**
 - Ficklampa i mörkret.
-- Gasmask med ett begränsat antal filter.
-- Leta delar och frön.
-- Mutanter i mörkret.
+- Gasmask med begränsat antal filter.
+- Leta bränsle, delar och frön.
+- Muterade djur och desperata människor.
 
-**Övrigt**
-- Ammunition fungerar som valuta.
-- Grannstationer med egna fraktioner (senare).
-- Stationen förändras synligt när du bygger upp den.
-- Egen värld och lore, gärna i en svensk eller nordisk stad.
+**Döden**
+- Permanent. Du väljer en ny invånare ur stationens pool.
+- Kroppen och dagboken ligger kvar och går att hämta.
+
+Alla beslut finns i [docs/DESIGN.md](docs/DESIGN.md).
 
 ## Tekniska beslut
 
 | Område | Val |
 |---|---|
-| Motor | MonoGame (DesktopGL) |
+| Motor | Godot 4 (.NET) |
 | Språk | C#, .NET 8 |
 | Utvecklingsmiljö | Ubuntu Linux |
-| Kamera | Uppifrån med 3/4-vy, som Stardew Valley |
-| Grafik | Pixelart, 16x16 pixlar per ruta, uppskalad med `SamplerState.PointClamp` |
-| Grafikverktyg | Aseprite eller LibreSprite |
+| Kamera | 3/4-vy uppifrån, roterar, lutar och zoomar fritt |
+| Grafik | Low poly 3D med runda figurer och platt skuggning |
+| Modeller | Blender, exporterade som `.glb` |
+| Indata | Tangentbord och mus, handkontroll |
+| Spelets språk | Engelska, med svenska platsnamn |
 
 ## Mappstruktur
 
 ```
 Bunkerbyn/
-  Game1.cs
-  Core/        Input, Camera, TimeManager
-  World/       TileMap, Tile, Crop
-  Entities/    Player
-  Scenes/      StationScene, TunnelScene
-  Content/     sprites, ljud, typsnitt
+  project.godot
+  Bunkerbyn.csproj
+  scenes/         Station.tscn, Tunnel.tscn, Resident.tscn
+  scripts/
+    Simulation/   Resident, Needs, Actions, Morale, Clock (vanlig C#, inga noder)
+    View/         ResidentView, CameraRig, StationView (Godot-noder)
+  models/         .glb från Blender
+  docs/
 ```
+
+Simuleringen vet inget om grafiken. Noderna i `View/` läser simuleringen och visar den.
 
 ## Milstolpar
 
-1. [ ] En gubbe som går på ett rutnät med tangentbordet.
-2. [ ] Tilemap för perrongen, ritad från en bild.
-3. [ ] Klocka och dagar som går.
-4. [ ] Plantera svamp, vattna och skörda efter tre dagar.
-5. [ ] Inventarie med några platser.
-6. [ ] Dörr till en mörk tunnel med ficklampa och filter som räknar ner.
+1. [ ] Kamera som roterar, lutar och zoomar över en tom perrong.
+2. [ ] Perrongen byggd av enkla former, som i prototypen.
+3. [ ] En invånare som går dit du klickar.
+4. [ ] Klocka, dagar och spelhastighet: paus, 1x, 2x, 3x.
+5. [ ] Behov: hunger och sömn. Invånaren går själv till mat och säng.
+6. [ ] Svampodling: plantera, vattna, skörda efter tre dagar.
+7. [ ] Lager med tak.
+8. [ ] Generator och bränsle: el av och på, facklor som reserv.
+9. [ ] Introduktionen: vakna skadad, Nadia och bränslekrisen.
+10. [ ] Tunneln: styr en invånare direkt med ficklampa och filter.
 
 ## Börja i liten skala
 
-En station, en tunnel och en ytkarta. Inga fraktionskrig, ingen öppen värld och ingen avancerad AI i början.
+En station, en tunnel och en ytkarta. Inga grannstationer, fraktioner eller multiplayer förrän milstolparna är klara.
 
 ## Upphovsrätt
 
 - Inget "Metro" i namnet.
 - Inga namn, figurer eller monsterdesigner från Metro-serien.
-- Bara egna assets eller assets med tydlig licens, till exempel CC0 från Kenney eller OpenGameArt.
+- Bara egna assets eller assets med tydlig licens, till exempel CC0 från Kenney eller Quaternius.
 - Varje assets källa listas i [ASSETS.md](ASSETS.md).
 
 ## Kom igång
 
-Se [setup/README.md](setup/README.md) för installation av .NET 8, MonoGame och MGCB-editorn på Ubuntu.
+Se [setup/README.md](setup/README.md) för installation av .NET 8, Godot 4 och Blender på Ubuntu.
 
 ## Arbetssätt med AI
 
@@ -83,6 +94,7 @@ Reglerna för AI-assistenter står i [AGENTS.md](AGENTS.md). [docs/AI-ARBETSSATT
 | `AGENTS.md` | Regler för alla AI-verktyg |
 | `CLAUDE.md` | Pekar på AGENTS.md |
 | `ASSETS.md` | Källa och licens för varje asset |
+| `docs/DESIGN.md` | Alla designbeslut och öppna frågor |
 | `docs/AI-ARBETSSATT.md` | Arbetssätt och AI-logg |
 | `setup/README.md` | Installation och körning |
 | `.editorconfig` | Formateringsregler för C# |

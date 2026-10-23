@@ -15,19 +15,26 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 
 ## Projekt
 
-- Bunkerbyn (arbetsnamn): 2D-spel i C# med MonoGame (DesktopGL) och .NET 8.
+- Bunkerbyn (arbetsnamn): kolonisimulator med överlevnad i Stockholms tunnelbana, byggd i Godot 4 med C# och .NET 8.
 - Utvecklas på Ubuntu Linux.
-- Kamera uppifrån med 3/4-vy. Pixelart med 16x16 pixlar per ruta, uppskalad med `SamplerState.PointClamp`.
+- Low poly 3D med runda figurer. Kamera i 3/4-vy som roterar fritt.
+- Alla designbeslut finns i docs/DESIGN.md. Läs den innan du föreslår mekaniker.
 - Koncept, mappstruktur och milstolpar finns i README.md.
 - Installation finns i setup/README.md.
+
+## Kod
+
+- Simuleringen skrivs i vanlig C# under scripts/Simulation och känner inte till Godot. Godot-noder under scripts/View visar bara simuleringen.
+- Namn på klasser, metoder och variabler skrivs på engelska.
+- Spelets texter skrivs på engelska. Platsnamn är svenska.
 
 ## Upphovsrätt
 
 - Inget "Metro" i namnet.
 - Inga namn, figurer eller monsterdesigner från Metro-serien.
-- Bara egna assets eller assets med tydlig licens, till exempel CC0 från Kenney eller OpenGameArt.
+- Bara egna assets eller assets med tydlig licens, till exempel CC0 från Kenney, Quaternius eller OpenGameArt.
 - Varje asset listas i ASSETS.md med källa och licens. En asset utan rad i ASSETS.md får inte läggas till.
 
 ## Börja i liten skala
 
-En station, en tunnel och en ytkarta. Föreslå inga fraktionskrig, ingen öppen värld och ingen avancerad AI förrän milstolparna i README.md är klara.
+En station, en tunnel och en ytkarta. Invånarnas behovsstyrda AI hör till kärnan och byggs tidigt. Föreslå inga grannstationer, fraktioner eller multiplayer förrän milstolparna i README.md är klara.
