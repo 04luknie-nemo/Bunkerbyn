@@ -123,6 +123,49 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 
 **Lager:** Har ett tak och kan bli fullt.
 
+## Valuta
+
+Ammunition som valuta är Metros mest kända idé och används inte. Bunkerbyn har en svensk valuta i tre nivåer:
+
+| Nivå | Valuta | Används till |
+|---|---|---|
+| Vardag | Tändstickor | Mat, små tjänster, information |
+| Lyx | Kaffe och snus | Moral, mutor, att få folk att lyssna |
+| Stora affärer | Jodtabletter och gasmaskfilter | Handel mellan stationer, medicin, vapen |
+
+- Säkerhetständstickan är en svensk uppfinning och massproducerades i Jönköping.
+- Tändstickor förbrukas. Varje tändsticka du betalar med är en eld du inte tänder. Valet mellan att spara och att tända en fackla blir ett verkligt beslut.
+- Kaffe växer inte i Sverige, så lagret tar slut för alltid. Fika höjer moralen.
+- Snus torkar och tappar värde om det sparas för länge.
+- Jodtabletter skyddar sköldkörteln mot radioaktivt jod och har högst värde.
+- Kontanter är värdelösa. Sverige var nästan kontantfritt före kriget, och sedlar används som tändpapper.
+
+## Djur och mutationer
+
+Alla faror är djur som finns i Sverige. Mutationerna är realistiska efter sju år: djuren har anpassat sig till mörker, strålning och brist på mat. De är inte jättemonster.
+
+Exempel på mutationer: blekare päls eller ingen päls, svaga ögon men bättre hörsel, tumörer, större flockar, mer aggressiva, bärare av sjukdomar.
+
+**I tunnlarna**
+- **Brunråttor:** Svärmar i mörkret. Sprider sjukdom och äter av lagret. Första faran i spelet.
+- **Fladdermöss:** Bor i tunnlarna och reagerar på ljus och ljud. Kan sprida sjukdom.
+- **Förvildade hundar:** Flockar som har tagit sig ner från ytan.
+- **Mink:** Förvildad mink från gamla pälsfarmer, i översvämmade tunnlar.
+- **Grottspindeln på Kungsträdgården:** Uppges bara finnas på den stationen i Sverige. Ofarlig, men en del av stationens lore.
+
+**På ytan**
+- **Vildsvin:** Stora, starka och aggressiva. Den farligaste vanliga faran på ytan.
+- **Älg:** Sällsynt i staden men livsfarlig när den är sjuk eller skrämd.
+- **Gråtrutar och kajor:** Attackerar i flock och stjäl mat.
+- **Rävar:** Smarta, rör sig ensamma och plundrar förråd.
+- **Varg och lodjur:** Senare, i utkanten av staden.
+
+**I vattnet**
+- **Signalkräftor:** Matkälla i översvämmade tunnlar.
+- **Gäddor:** Stora och farliga i djupt vatten.
+
+Djuren är också resurser. Råttor, duvor och kräftor kan bli mat när annat tar slut, med risk för sjukdom.
+
 ## Död
 
 - Döden är permanent. Du väljer en ny invånare ur stationens pool.
@@ -167,8 +210,7 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 
 ## Öppna frågor
 
-- **Valuta:** Ammunition som i första idén, eller byteshandel?
-- **Mutanter:** Förslag i början: råttor, hundar och grottspindeln från Kungsträdgården. Muterade människor senare?
+- **Muterade människor:** Finns de, och hur realistiskt kan det göras?
 - **Ton:** Svält och barn som dör är bestämt. Självmord, tortyr och kannibalism är inte bestämt.
 - **Namn:** Bunkerbyn är arbetsnamn. Ett engelskt namn kan behövas för Steam.
 - **Ljud och musik.**
