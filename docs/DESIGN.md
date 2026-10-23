@@ -166,6 +166,23 @@ Exempel på mutationer: blekare päls eller ingen päls, svaga ögon men bättre
 
 Djuren är också resurser. Råttor, duvor och kräftor kan bli mat när annat tar slut, med risk för sjukdom.
 
+## Människor utanför stationerna
+
+Det finns inga zombies och inga odödliga ghouls. Hög strålning dödar inom dagar eller veckor, och lägre doser ger cancer och kortare liv.
+
+**De brända**
+- Människor som överlevde strålning men fick bestående skador: ärr från brännskador, håravfall, fläckig hud och grå starr.
+- Svagt immunförsvar och kortare liv. De är inte starkare och inte immuna.
+- Stationerna stöter bort dem av rädsla för smitta, fast strålningsskador inte smittar. De bor på förorenade platser där ingen annan vill vara.
+- De känner ytan efter sju år där och vet var strålningen är farlig. De handlar med saker från ytan.
+- Att ta in en av dem sänker moralen hos vissa invånare och höjer den hos andra, beroende på personlighet.
+- Förebilder: hibakusha i Japan, som mötte fördomar i decennier, och samosely, som flyttade tillbaka in i zonen runt Tjernobyl. Ämnet behandlas med respekt.
+
+**De förvildade**
+- Människor som har förvildats av svält, isolering och mörker i åratal.
+- Desperata och oberäkneliga, men fortfarande människor.
+- Hör ihop med den öppna frågan om kannibalism.
+
 ## Död
 
 - Döden är permanent. Du väljer en ny invånare ur stationens pool.
@@ -210,7 +227,6 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 
 ## Öppna frågor
 
-- **Muterade människor:** Finns de, och hur realistiskt kan det göras?
 - **Ton:** Svält och barn som dör är bestämt. Självmord, tortyr och kannibalism är inte bestämt.
 - **Namn:** Bunkerbyn är arbetsnamn. Ett engelskt namn kan behövas för Steam.
 - **Ljud och musik.**

@@ -85,3 +85,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-23 | Projektstart | Claude Code | Ta över | Skrev README, CLAUDE.md, AGENTS.md, ASSETS.md, det här dokumentet, setup/README.md, .editorconfig, .gitignore, .vscode och build.yml med Household som förebild | –   |
 | 2026-10-23 | Designbeslut | Claude Code | Ta över | Skrev docs/DESIGN.md efter grillningen. Bytte MonoGame och pixelart mot Godot 4 och low poly 3D i README, AGENTS.md, setup/README.md och .gitignore. Byggde två prototyper i webbläsaren, i 2D och i 3D, som inte ligger i repot | –   |
 | 2026-10-23 | Valuta och djur | Claude Code | Ta över | Lade till tändstickor som valuta i tre nivåer och svenska djur som faror i docs/DESIGN.md | #1  |
+| 2026-10-23 | De brända | Claude Code | Ta över | Lade till människor utanför stationerna, de brända och de förvildade, i docs/DESIGN.md | #1  |
