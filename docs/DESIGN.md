@@ -561,10 +561,10 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - En `Expedition` är en grupp invånare med packning som rör sig på nätet.
 - En klocka driver allt: stationer, expeditioner och agenter på nätet.
 - Varje ruta i rutnätet har lager: golv med material, vägg eller mur, föremål och yta. Då vet spelet vad som kan byggas, vad som går att ta isär och vad det ger.
-- Simuleringen tickar i en fast takt, oberoende av bildfrekvensen. Snabbare spelhastighet betyder fler tick per sekund, inte större steg.
-- Allt i simuleringen går att spara. Objekt pekar på varandra med id, inte med referenser till Godot-noder.
-- All slump i simuleringen går genom en slumpkälla med frö. Det gör tester förutsägbara och tunnlarna likadana vid varje besök.
-- Spelets texter går genom Godots översättningssystem med nycklar från början, så att fler språk kan läggas till.
+- **Takt:** Simuleringen tickar 20 gånger per sekund vid 1x, oberoende av bildfrekvensen. En speldag är 24 000 tick. Vid 2x och 3x körs fler tick per sekund, inte större steg. Vyn interpolerar mellan tick så att rörelsen blir mjuk. Tunga saker som AI-beslut och avlägsna stationer körs inte varje tick.
+- **Sparning:** Allt i simuleringen går att spara som JSON. Objekt pekar på varandra med id, inte med referenser. Id är `int` från en gemensam räknare i `World`, sparas med världen och återanvänds aldrig. Sparfilen har ett versionsnummer.
+- **Slump:** All slump går genom en egen slumpgenerator med frö, vars läge sparas med världen. Laddar du om samma morgon blir utfallet detsamma. Tunnelsträckor får egna strömmar, till exempel världsfrö kombinerat med sträckans id. Godots och .NET:s slump används aldrig i simuleringen.
+- **Texter:** Spelets texter går genom Godots översättningssystem med PO-filer, där engelsk text är nyckeln. Simuleringen skapar händelser med data, aldrig färdiga texter. Vyn gör om händelserna till text.
 - Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
 - Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
 - `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.
