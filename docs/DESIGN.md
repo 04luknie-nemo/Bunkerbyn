@@ -5,16 +5,22 @@ Det här dokumentet samlar besluten om Bunkerbyn. Ändra här när ett beslut ä
 Prototyper (privata länkar, öppnas med ditt konto):
 - [Perrongen i två stilar, 2D](https://claude.ai/artifact/D3MP1qurYSuYxnLinT8mqt)
 - [Perrongen i low poly 3D med gångstilar](https://claude.ai/artifact/EHdmaCbbZDXugDSBxkE4RS)
+- [Stockholm under jord, handritad nätkarta](https://claude.ai/artifact/6mZ9QdgXzEsNQ4ac9oziQ5)
 
 ## Översikt
 
 Bunkerbyn är en kolonisimulator med överlevnad i Stockholms tunnelbana, sju år efter ett kärnvapenkrig. Du styr en station med invånare som har behov, roller och moral. På stationen ger du order. I tunnlarna och på ytan styr du en utvald invånare direkt.
+
+Det långsiktiga målet är att växa utåt: ta tunnelsträckor, bygga utposter och vinna grannstationer, tills din station är en makt i tunnelnätet.
 
 Närmaste förebilder:
 - This War of Mine: skyddsrum, räder och permanent död.
 - RimWorld och Oxygen Not Included: invånare som arbetar själva efter behov.
 - Frostpunk: moral, ledarskap och uppror.
 - Going Medieval och Timberborn: low poly 3D med roterbar kamera.
+- Hearts of Iron IV och Metro-modden: en strategikarta där du växer utåt.
+
+Inget färdigt spel gör detta bra. Metro 2033: Wars hade idén om att ta station efter station men fick dålig kritik. Until We Die handlar om att försvara en station, inte att växa.
 
 ## Värld
 
@@ -195,13 +201,56 @@ Det finns inga zombies och inga odödliga ghouls. Hög strålning dödar inom da
 - Om alla dör är spelet förlorat.
 - Spelet sparar automatiskt varje morgon. Du kan inte ladda om för att ångra en död.
 
+## Nätkartan
+
+Spelet har två lager:
+
+1. **Stationsvyn:** Kolonin i 3D med invånare, behov och ledarskap. Allt i avsnitten ovan.
+2. **Nätkartan:** Stockholms tunnelbana som strategikarta, ungefär som kartan i Hearts of Iron IV.
+
+**På nätkartan**
+- Stationer och tunnelsträckor är noder och kanter. Varje sträcka har ett tillstånd: okänd, utforskad, säker, rasad, översvämmad eller farlig.
+- Du skickar expeditioner som utforskar sträckor och hittar resurser.
+- Du tar sträckor bit för bit och bygger utposter: vaktposter, förråd och barrikader. Utposter kräver invånare och förnödenheter.
+- Grannstationer har egna ledare, befolkning och behov. Du kan handla med dem, ingå förbund, ta in flyktingar eller ta över dem.
+- Varje station du kontrollerar blir en egen stationsvy som du kan gå ner i.
+- Stationer du inte tittar på simuleras förenklat: befolkning, mat, el och moral som siffror.
+
+**Strid**
+- Strid sker i stationsvyn. När en grannstation, en flock eller de förvildade anfaller går du ner i den stationen eller utposten och försvarar den.
+- Nätkartan visar var hotet kommer ifrån. Själva striden spelas i 3D.
+
+**Barrikader och portar**
+Moskvas tunnelbana byggdes med hermetiska portar. Stockholms gjorde det inte, så vitt vi har kunnat se. De överlevande har byggt sitt skydd själva:
+- **Barrikader** av vagnar, sliprar och räler. Snabba att bygga, svaga.
+- **Svetsade portar** av stålplåt från tågvagnar. Kräver svetsutrustning och gas.
+- **Gjutna murar** med en lucka. Starka men långsamma att bygga, och de stänger tunneln för handel.
+- **Larm** av burkar och tråd som varnar innan något når porten.
+
+En sträckas tillstånd på nätkartan beror på vad du har byggt där.
+
+**Naturliga skydd och svagheter**
+- **Ändstationer**, som Kungsträdgården, har bara en ingång från tunnelnätet och är lättast att försvara.
+- **Blå linjen** går helt under jord i berg och är bäst skyddad.
+- **Sträckor i dagen** är de farligaste: bron mellan T-Centralen, Gamla stan och Slussen, Tranebergsbron mellan Kristineberg och Alvik, Skansbron mellan Skanstull och Gullmarsplan, och Ropsten. Där är du ute på ytan.
+- **Nödutgångar och schakt** leder upp till ytan. De är vägar för flykt men också för faror.
+- **Uppgångar och rulltrappor** är stationernas svaga punkter mot ytan.
+- **Kymlinge**, stationen på blå linjen som aldrig öppnades, är en naturlig plats för något som gömmer sig.
+
+**Första expansionen**
+Kungsträdgården ligger på blå linjen, som leder till T-Centralen. Navet där alla linjer möts blir första stora målet. Vägen dit går genom halvfärdiga och rasade tunnlar.
+
+**Ordning**
+Nätkartan byggs efter milstolparna i README. Stationsvyn måste fungera först. Simuleringen byggs ändå för flera stationer från början, se Teknik.
+
 ## Mål
 
-Spelet är oändligt. Tre spår ger riktning:
+Spelet är oändligt. Fyra spår ger riktning:
 
 1. **Överleva:** Klara bränslekrisen i introduktionen, sedan vinter, sjukdomar och översvämningar.
 2. **Bygga upp:** Stationen växer i nivåer. Exempel: fungerande el, renat vatten, filtrerad luft, ett öppnat stängt schakt och en säker utgång till parken ovanför.
-3. **Upptäcka:** En berättelse om omvärlden. Exempel: en trasig radio, signaler från andra stationer, en expedition till T-Centralen, och rykten om att någon lever kvar vid Muskö.
+3. **Växa utåt:** Ta tunnelsträckor, bygg utposter och vinn grannstationer på nätkartan. Första målet är T-Centralen.
+4. **Upptäcka:** En berättelse om omvärlden. Exempel: en trasig radio, signaler från andra stationer, och rykten om att någon lever kvar vid Muskö.
 
 Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en generation, så att barnen som föddes på stationen blir dess vuxna.
 
@@ -217,6 +266,7 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - Godot 4 med C# och .NET 8.
 - Blender för modeller, exporterade som `.glb`.
 - Simuleringen är vanlig C# utan Godot-noder. Godot-noderna visar bara simuleringen. Det gör logiken testbar och multiplayer möjligt senare.
+- Simuleringen klarar flera stationer från början. Invånare, lager, el och moral hör till en `Station`, inte till spelet som helhet. En `World` håller alla stationer och tunnelsträckor. Under milstolparna finns bara en station i världen.
 
 ## Språk
 
@@ -232,4 +282,5 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - **Ljud och musik.**
 - **Plattformar och pris.**
 - **Multiplayer:** Flera stationer, kanske samma station. Väntar tills enspelarläget fungerar.
-- **Grannstationer och fraktioner:** Efter milstolparna.
+- **Grannstationer:** Vilka stationer finns runt Kungsträdgården, och vem leder dem?
+- **Portar i verkligheten:** Har Stockholms tunnelbana tryckdörrar eller skyddsportar? Fråga SL eller Trafikförvaltningen. Om svaret är ja kan de bli en del av lore.
