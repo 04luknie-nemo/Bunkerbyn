@@ -561,6 +561,10 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - En `Expedition` är en grupp invånare med packning som rör sig på nätet.
 - En klocka driver allt: stationer, expeditioner och agenter på nätet.
 - Varje ruta i rutnätet har lager: golv med material, vägg eller mur, föremål och yta. Då vet spelet vad som kan byggas, vad som går att ta isär och vad det ger.
+- Simuleringen tickar i en fast takt, oberoende av bildfrekvensen. Snabbare spelhastighet betyder fler tick per sekund, inte större steg.
+- Allt i simuleringen går att spara. Objekt pekar på varandra med id, inte med referenser till Godot-noder.
+- All slump i simuleringen går genom en slumpkälla med frö. Det gör tester förutsägbara och tunnlarna likadana vid varje besök.
+- Spelets texter går genom Godots översättningssystem med nycklar från början, så att fler språk kan läggas till.
 - Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
 - Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
 - `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.

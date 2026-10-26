@@ -92,3 +92,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-26 | Samhälle och ekonomi | Claude Code | Ta över | Lade till val, lagar, föreståndare, resurser, ekonomi, handel, relationer, barn, sjukdom, ton och gränssnitt i docs/DESIGN.md efter Lukas val. Regeln om innehåll som data i AGENTS.md | –   |
 | 2026-10-26 | Forskning | Claude Code | Ta över | Lade till forskning med böcker, bibliotek och forskningsträd, och längre kedjor senare, i docs/DESIGN.md | #14 |
 | 2026-10-26 | Bygga och ta isär | Claude Code | Ta över | Lade till byggande med ritningar, att ta isär stationen till material, dressin och rälsport, och lager per ruta i docs/DESIGN.md | #14 |
+| 2026-10-26 | Tekniska grundregler | Claude Code | Ta över | Lade till fast takt, sparbar simulering, slumpkälla med frö och texter via översättningssystemet i docs/DESIGN.md och AGENTS.md | #14 |
