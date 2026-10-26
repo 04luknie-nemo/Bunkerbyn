@@ -94,6 +94,17 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 - Barn kan dö av sjukdom, kyla, svält eller olyckor. Döden visas utanför bild. Spelaren kan aldrig skada barn direkt.
 - Barn växer upp och blir vuxna med tiden.
 
+**Relationer och barn**
+- Invånare har relationer till varandra: vänskap, kärlek, ovänskap. De växer av tid tillsammans och delade händelser.
+- Par kan bildas och barn kan födas. Befolkningen växer inifrån, inte bara genom flyktingar och räddade.
+- En skola på stationen ger barnen färdigheter innan de blir vuxna.
+- En graviditet och ett spädbarn kostar mat och arbetstid, men ger stationen en framtid. Det knyter an till målet att överleva en generation.
+
+**Sjukdom**
+- Smitta sprids i trånga utrymmen, genom dåligt vatten och genom mat från råttor.
+- Sjuka arbetar sämre och kan smitta andra.
+- Karantän och medicin stoppar spridningen. Medicin kommer från ytan och sjukhus.
+
 **AI:** Varje invånare väljer handling efter poäng (utility AI). Hunger ger "äta" högt värde, trötthet ger "sova" högt värde, rollen ger arbete högt värde under arbetstid. Varje handling är en klass som räknar fram sin poäng.
 
 **Gångstil:** Steglängd, armsving, lutning, huvud, takt och hastighet räknas fram från behov och tillstånd. Trött, hungrig, skadad, rädd och bärande syns i kroppen. Se prototypen i 3D.
@@ -107,6 +118,42 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 - Ingen majoritet: du kan ta makten (snabbt, men moralen sjunker och fiender uppstår) eller bilda ett råd på tre (stabilt, men order går långsammare). Rådet byggs efter val och maktövertagande.
 - Uppror växer fram ur poängen: låg moral och svag chef ger en invånare höga poäng för att ta över.
 - Att dela stationen i två sparas till ett senare scenario.
+
+**Val**
+- Chefen väljs genom röstning bland de vuxna.
+- Varje vuxen ger varje kandidat poäng: relation, om personligheterna passar ihop, vad kandidaten har gjort och vad den lovar. Rösten går till den med högst poäng. Det är samma utility AI som för behoven.
+- Du påverkar genom att prata med folk, ge gåvor och lova lagar. Ett brutet löfte sänker förtroendet för den som lovade.
+- Val hålls när chefen dör, när förtroendet för chefen faller under en gräns, eller när en majoritet kräver det.
+
+**Lagar**
+Chefen beslutar lagar. Varje lag gillas av vissa personligheter och ogillas av andra, så moralen påverkas olika för olika invånare.
+
+| Område | Val |
+|---|---|
+| Ransoner | Lika för alla, eller mer till de som arbetar |
+| Vem går ut | Frivilliga, lottning eller order |
+| Flyktingar | Ta in alla, bara arbetsföra, eller ingen |
+| Straff | Arrest, arbete, utvisning eller avrättning |
+| De döda | Begravning, eller kremering som sparar tid |
+| Arbetstid | Normal, eller förlängd i kris |
+
+- En lag kan inte ändras hur ofta som helst. Att byta lag kostar förtroende.
+- Grupper uppstår av sig själva bland dem som tycker lika. De som håller med Nadia om att rädda alla samlas, och de hårda samlas på andra sidan. Grupperna bestäms inte i förväg.
+
+**Stationer du har tagit över**
+- Du utser en föreståndare: en av dina invånare eller en lokal ledare. Föreståndaren har lojalitet, skicklighet, ambition och personlighet.
+- Du ger riktlinjer, inte order:
+  - Fokus: mat, försvar, handel eller tillväxt.
+  - Tribut: hur stor del av produktionen som skickas hem.
+  - Lagar: dina, eller stationens egna.
+- Föreståndaren styr själv med samma utility AI som invånarna, fast på stationsnivå. Ökar hotet bygger hen mur. Tar maten slut skickar hen expeditioner.
+- Stationen simuleras förenklat när du inte tittar: produktionen räknas fram ur befolkning, byggnader och föreståndarens skicklighet.
+- Rapporter tar tid. En budbärare går på nätet med nyheter. Det du vet kan vara dagar gammalt, och budbärare kan dö på vägen.
+- Riskerna:
+  - Hög tribut ger låg moral och risk för uppror.
+  - En föreståndare med hög ambition och låg lojalitet kan bryta sig loss.
+  - En girig föreståndare kan behålla en del av tributen.
+- Du kan gå ner i stationen och styra den direkt en tid.
 
 ## Resurser
 
@@ -128,6 +175,32 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 **Mat:** Svamp och rotfrukter under lysrör, senare djur.
 
 **Lager:** Har ett tak och kan bli fullt.
+
+**Alla resurser**
+
+| Grupp | Exempel |
+|---|---|
+| Grundbehov | Mat, vatten, luft, värme |
+| Energi | Diesel, batterier |
+| Material | Stål, betong, sliprar, gummi, isolering, skrot, elektronik |
+| Medicin | Förband, antibiotika, jodtabletter |
+| Utrustning | Gasmasker, filter, lampor, verktyg, vapen, ammunition |
+| Lyx | Kaffe, snus, sprit, böcker |
+| Kunskap | Kartor, recept, dagböcker |
+
+**Förbrukning:** Varje person förbrukar en portion mat och tre liter vatten per dag. Det gör det lätt att se hur länge lagret räcker. Värdena justeras när spelet går att testa.
+
+## Ekonomi
+
+- **Korta kedjor**, högst två steg: svamp blir mat, läckvatten filtreras och kokas, skrot blir delar och delar blir verktyg.
+- **Verkstäder** gör förädlingen: kök, vattenrening, verkstad, sjukstuga. Varje verkstad kräver en invånare med rätt färdighet.
+- **Priser varierar mellan stationer.** En station med mycket vatten betalar lite för vatten. Priset räknas fram ur hur mycket stationen har och hur mycket den behöver.
+- **Tändstickorna tar slut med tiden**, så valutan blir värd mer. Det passar en värld som långsamt tömmer sina lager.
+
+**Handel**
+- Varor flyttas med karavaner som går på nätet. Det tar tid, och karavaner kan rånas.
+- Du kan skicka egna karavaner, och andra stationers karavaner kommer till dig.
+- En säker handelsväg kräver hävdade eller säkrade sträckor. Det knyter handeln till kontrollen på nätkartan.
 
 ## Valuta
 
@@ -187,7 +260,7 @@ Det finns inga zombies och inga odödliga ghouls. Hög strålning dödar inom da
 **De förvildade**
 - Människor som har förvildats av svält, isolering och mörker i åratal.
 - Desperata och oberäkneliga, men fortfarande människor.
-- Hör ihop med den öppna frågan om kannibalism.
+- De rånar karavaner och anfaller svaga utposter.
 
 ## Död
 
@@ -373,6 +446,19 @@ Spelet är oändligt. Fyra spår ger riktning:
 
 Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en generation, så att barnen som föddes på stationen blir dess vuxna.
 
+## Ton
+
+- Svält och barn som dör finns. Barns död visas utanför bild, och spelaren kan aldrig skada barn direkt.
+- Avrättning finns som straff i lagarna, med stor kostnad i moral.
+- Kannibalism, självmord och tortyr finns inte i spelet.
+
+## Gränssnitt
+
+- Läget visas mest i världen: gångstil, ikoner över huvuden när något är fel, och ljuset på stationen.
+- Paneler med behov, arbete och lager öppnas när du klickar på en invånare, en byggnad eller lagret.
+- Larm visas kort i kanten av skärmen när något kräver beslut: en flock närmar sig, maten räcker två dagar, ett val ska hållas.
+- Rapporter från andra stationer kommer som brev från budbärare.
+
 ## Grafik
 
 - Low poly 3D med runda figurer, platt skuggning och få eller inga texturer.
@@ -392,6 +478,9 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - `Knowledge` hör till en station och minns vad som sågs var och när.
 - En `Expedition` är en grupp invånare med packning som rör sig på nätet.
 - En klocka driver allt: stationer, expeditioner och agenter på nätet.
+- Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
+- Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
+- `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.
 
 ## Språk
 
@@ -402,7 +491,6 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 
 ## Öppna frågor
 
-- **Ton:** Svält och barn som dör är bestämt. Självmord, tortyr och kannibalism är inte bestämt.
 - **Namn:** Bunkerbyn är arbetsnamn. Ett engelskt namn kan behövas för Steam.
 - **Ljud och musik.**
 - **Plattformar och pris.**
