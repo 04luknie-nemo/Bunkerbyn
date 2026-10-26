@@ -87,3 +87,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-23 | Valuta och djur | Claude Code | Ta över | Lade till tändstickor som valuta i tre nivåer och svenska djur som faror i docs/DESIGN.md | #1  |
 | 2026-10-23 | De brända | Claude Code | Ta över | Lade till människor utanför stationerna, de brända och de förvildade, i docs/DESIGN.md | #1  |
 | 2026-10-26 | Nätkartan | Claude Code | Ta över | Lade till nätkartan som långsiktigt mål och regeln om flera stationer i docs/DESIGN.md, AGENTS.md och README | –   |
+| 2026-10-26 | Strid och barrikader | Claude Code | Ta över | Lade till strid i stationsvyn, barrikader, naturliga skydd och länk till den handritade nätkartan i docs/DESIGN.md | #12 |

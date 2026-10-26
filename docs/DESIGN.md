@@ -5,6 +5,7 @@ Det här dokumentet samlar besluten om Bunkerbyn. Ändra här när ett beslut ä
 Prototyper (privata länkar, öppnas med ditt konto):
 - [Perrongen i två stilar, 2D](https://claude.ai/artifact/D3MP1qurYSuYxnLinT8mqt)
 - [Perrongen i low poly 3D med gångstilar](https://claude.ai/artifact/EHdmaCbbZDXugDSBxkE4RS)
+- [Stockholm under jord, handritad nätkarta](https://claude.ai/artifact/6mZ9QdgXzEsNQ4ac9oziQ5)
 
 ## Översikt
 
@@ -215,6 +216,27 @@ Spelet har två lager:
 - Varje station du kontrollerar blir en egen stationsvy som du kan gå ner i.
 - Stationer du inte tittar på simuleras förenklat: befolkning, mat, el och moral som siffror.
 
+**Strid**
+- Strid sker i stationsvyn. När en grannstation, en flock eller de förvildade anfaller går du ner i den stationen eller utposten och försvarar den.
+- Nätkartan visar var hotet kommer ifrån. Själva striden spelas i 3D.
+
+**Barrikader och portar**
+Moskvas tunnelbana byggdes med hermetiska portar. Stockholms gjorde det inte, så vitt vi har kunnat se. De överlevande har byggt sitt skydd själva:
+- **Barrikader** av vagnar, sliprar och räler. Snabba att bygga, svaga.
+- **Svetsade portar** av stålplåt från tågvagnar. Kräver svetsutrustning och gas.
+- **Gjutna murar** med en lucka. Starka men långsamma att bygga, och de stänger tunneln för handel.
+- **Larm** av burkar och tråd som varnar innan något når porten.
+
+En sträckas tillstånd på nätkartan beror på vad du har byggt där.
+
+**Naturliga skydd och svagheter**
+- **Ändstationer**, som Kungsträdgården, har bara en ingång från tunnelnätet och är lättast att försvara.
+- **Blå linjen** går helt under jord i berg och är bäst skyddad.
+- **Sträckor i dagen** är de farligaste: bron mellan T-Centralen, Gamla stan och Slussen, Tranebergsbron mellan Kristineberg och Alvik, Skansbron mellan Skanstull och Gullmarsplan, och Ropsten. Där är du ute på ytan.
+- **Nödutgångar och schakt** leder upp till ytan. De är vägar för flykt men också för faror.
+- **Uppgångar och rulltrappor** är stationernas svaga punkter mot ytan.
+- **Kymlinge**, stationen på blå linjen som aldrig öppnades, är en naturlig plats för något som gömmer sig.
+
 **Första expansionen**
 Kungsträdgården ligger på blå linjen, som leder till T-Centralen. Navet där alla linjer möts blir första stora målet. Vägen dit går genom halvfärdiga och rasade tunnlar.
 
@@ -261,4 +283,4 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - **Plattformar och pris.**
 - **Multiplayer:** Flera stationer, kanske samma station. Väntar tills enspelarläget fungerar.
 - **Grannstationer:** Vilka stationer finns runt Kungsträdgården, och vem leder dem?
-- **Strid på nätkartan:** Hur löses konflikter om sträckor? Automatiskt, som i Hearts of Iron IV, eller som strid i stationsvyn?
+- **Portar i verkligheten:** Har Stockholms tunnelbana tryckdörrar eller skyddsportar? Fråga SL eller Trafikförvaltningen. Om svaret är ja kan de bli en del av lore.
