@@ -26,6 +26,7 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 
 - Simuleringen skrivs i vanlig C# under scripts/Simulation och känner inte till Godot. Godot-noder under scripts/View visar bara simuleringen.
 - Simuleringen klarar flera stationer. Invånare, lager, el och moral hör till en `Station`. En `World` håller alla stationer och tunnelsträckor.
+- Positioner i simuleringen är abstrakta: en station, eller en sträcka plus ett avstånd. Vägsökning, synlinjer, ljus och ljud räknas på simuleringens rutnät, inte med Godots fysik.
 - Namn på klasser, metoder och variabler skrivs på engelska.
 - Spelets texter skrivs på engelska. Platsnamn är svenska.
 
