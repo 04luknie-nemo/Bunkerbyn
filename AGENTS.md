@@ -25,6 +25,7 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 ## Kod
 
 - Simuleringen skrivs i vanlig C# under scripts/Simulation och känner inte till Godot. Godot-noder under scripts/View visar bara simuleringen.
+- Simuleringen klarar flera stationer. Invånare, lager, el och moral hör till en `Station`. En `World` håller alla stationer och tunnelsträckor.
 - Namn på klasser, metoder och variabler skrivs på engelska.
 - Spelets texter skrivs på engelska. Platsnamn är svenska.
 
@@ -37,4 +38,4 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 
 ## Börja i liten skala
 
-En station, en tunnel och en ytkarta. Invånarnas behovsstyrda AI hör till kärnan och byggs tidigt. Föreslå inga grannstationer, fraktioner eller multiplayer förrän milstolparna i README.md är klara.
+En station, en tunnel och en ytkarta. Invånarnas behovsstyrda AI hör till kärnan och byggs tidigt. Nätkartan med grannstationer och expansion är spelets långsiktiga mål, men byggs först när milstolparna i README.md är klara. Föreslå ingen multiplayer innan dess.

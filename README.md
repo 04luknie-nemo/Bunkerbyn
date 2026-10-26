@@ -6,7 +6,7 @@ Byggs i Godot 4 med C# och low poly 3D.
 
 ## Koncept
 
-Inspiration: This War of Mine, RimWorld, Frostpunk och Stardew Valley.
+Inspiration: This War of Mine, RimWorld, Frostpunk, Stardew Valley och Metro-modden till Hearts of Iron IV.
 
 **På stationen**
 - Odla svamp och rotfrukter under lysrör.
@@ -19,6 +19,11 @@ Inspiration: This War of Mine, RimWorld, Frostpunk och Stardew Valley.
 - Gasmask med begränsat antal filter.
 - Leta bränsle, delar och frön.
 - Muterade djur och desperata människor.
+
+**Nätkartan**
+- Stockholms tunnelbana som strategikarta.
+- Ta tunnelsträckor, bygg utposter och vinn grannstationer.
+- Första målet är T-Centralen.
 
 **Döden**
 - Permanent. Du väljer en ny invånare ur stationens pool.
@@ -47,7 +52,7 @@ Bunkerbyn/
   Bunkerbyn.csproj
   scenes/         Station.tscn, Tunnel.tscn, Resident.tscn
   scripts/
-    Simulation/   Resident, Needs, Actions, Morale, Clock (vanlig C#, inga noder)
+    Simulation/   World, Station, Resident, Needs, Actions, Morale, Clock (vanlig C#, inga noder)
     View/         ResidentView, CameraRig, StationView (Godot-noder)
   models/         .glb från Blender
   docs/
@@ -70,7 +75,7 @@ Simuleringen vet inget om grafiken. Noderna i `View/` läser simuleringen och vi
 
 ## Börja i liten skala
 
-En station, en tunnel och en ytkarta. Inga grannstationer, fraktioner eller multiplayer förrän milstolparna är klara.
+En station, en tunnel och en ytkarta. Nätkartan med grannstationer byggs när milstolparna är klara. Simuleringen förbereds ändå för flera stationer från början.
 
 ## Upphovsrätt
 
