@@ -85,6 +85,7 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 
 **Karaktärsdrag**
 - Färdigheter 0 till 10: odling, mekanik, medicin, matlagning, strid och förhandling. Två till tre höga per person.
+- Lärdom 0 till 10: hur bra personen är på att läsa och forska.
 - Personlighet: ett till två drag, till exempel modig, feg, girig, omtänksam, hetsig eller lugn.
 - Bakgrund: en rad om livet före kriget. Ger ingen bonus.
 
@@ -93,6 +94,17 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 - Bara vuxna går ut i tunnlarna. Barn skickas aldrig ut.
 - Barn kan dö av sjukdom, kyla, svält eller olyckor. Döden visas utanför bild. Spelaren kan aldrig skada barn direkt.
 - Barn växer upp och blir vuxna med tiden.
+
+**Relationer och barn**
+- Invånare har relationer till varandra: vänskap, kärlek, ovänskap. De växer av tid tillsammans och delade händelser.
+- Par kan bildas och barn kan födas. Befolkningen växer inifrån, inte bara genom flyktingar och räddade.
+- En skola på stationen ger barnen färdigheter innan de blir vuxna.
+- En graviditet och ett spädbarn kostar mat och arbetstid, men ger stationen en framtid. Det knyter an till målet att överleva en generation.
+
+**Sjukdom**
+- Smitta sprids i trånga utrymmen, genom dåligt vatten och genom mat från råttor.
+- Sjuka arbetar sämre och kan smitta andra.
+- Karantän och medicin stoppar spridningen. Medicin kommer från ytan och sjukhus.
 
 **AI:** Varje invånare väljer handling efter poäng (utility AI). Hunger ger "äta" högt värde, trötthet ger "sova" högt värde, rollen ger arbete högt värde under arbetstid. Varje handling är en klass som räknar fram sin poäng.
 
@@ -107,6 +119,42 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 - Ingen majoritet: du kan ta makten (snabbt, men moralen sjunker och fiender uppstår) eller bilda ett råd på tre (stabilt, men order går långsammare). Rådet byggs efter val och maktövertagande.
 - Uppror växer fram ur poängen: låg moral och svag chef ger en invånare höga poäng för att ta över.
 - Att dela stationen i två sparas till ett senare scenario.
+
+**Val**
+- Chefen väljs genom röstning bland de vuxna.
+- Varje vuxen ger varje kandidat poäng: relation, om personligheterna passar ihop, vad kandidaten har gjort och vad den lovar. Rösten går till den med högst poäng. Det är samma utility AI som för behoven.
+- Du påverkar genom att prata med folk, ge gåvor och lova lagar. Ett brutet löfte sänker förtroendet för den som lovade.
+- Val hålls när chefen dör, när förtroendet för chefen faller under en gräns, eller när en majoritet kräver det.
+
+**Lagar**
+Chefen beslutar lagar. Varje lag gillas av vissa personligheter och ogillas av andra, så moralen påverkas olika för olika invånare.
+
+| Område | Val |
+|---|---|
+| Ransoner | Lika för alla, eller mer till de som arbetar |
+| Vem går ut | Frivilliga, lottning eller order |
+| Flyktingar | Ta in alla, bara arbetsföra, eller ingen |
+| Straff | Arrest, arbete, utvisning eller avrättning |
+| De döda | Begravning, eller kremering som sparar tid |
+| Arbetstid | Normal, eller förlängd i kris |
+
+- En lag kan inte ändras hur ofta som helst. Att byta lag kostar förtroende.
+- Grupper uppstår av sig själva bland dem som tycker lika. De som håller med Nadia om att rädda alla samlas, och de hårda samlas på andra sidan. Grupperna bestäms inte i förväg.
+
+**Stationer du har tagit över**
+- Du utser en föreståndare: en av dina invånare eller en lokal ledare. Föreståndaren har lojalitet, skicklighet, ambition och personlighet.
+- Du ger riktlinjer, inte order:
+  - Fokus: mat, försvar, handel eller tillväxt.
+  - Tribut: hur stor del av produktionen som skickas hem.
+  - Lagar: dina, eller stationens egna.
+- Föreståndaren styr själv med samma utility AI som invånarna, fast på stationsnivå. Ökar hotet bygger hen mur. Tar maten slut skickar hen expeditioner.
+- Stationen simuleras förenklat när du inte tittar: produktionen räknas fram ur befolkning, byggnader och föreståndarens skicklighet.
+- Rapporter tar tid. En budbärare går på nätet med nyheter. Det du vet kan vara dagar gammalt, och budbärare kan dö på vägen.
+- Riskerna:
+  - Hög tribut ger låg moral och risk för uppror.
+  - En föreståndare med hög ambition och låg lojalitet kan bryta sig loss.
+  - En girig föreståndare kan behålla en del av tributen.
+- Du kan gå ner i stationen och styra den direkt en tid.
 
 ## Resurser
 
@@ -128,6 +176,107 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 **Mat:** Svamp och rotfrukter under lysrör, senare djur.
 
 **Lager:** Har ett tak och kan bli fullt.
+
+**Alla resurser**
+
+| Grupp | Exempel |
+|---|---|
+| Grundbehov | Mat, vatten, luft, värme |
+| Energi | Diesel, batterier |
+| Material | Stål, betong, sliprar, gummi, isolering, skrot, elektronik |
+| Medicin | Förband, antibiotika, jodtabletter |
+| Utrustning | Gasmasker, filter, lampor, verktyg, vapen, ammunition |
+| Lyx | Kaffe, snus, sprit, böcker |
+| Kunskap | Kartor, recept, dagböcker |
+
+**Förbrukning:** Varje person förbrukar en portion mat och tre liter vatten per dag. Det gör det lätt att se hur länge lagret räcker. Värdena justeras när spelet går att testa.
+
+## Ekonomi
+
+- **Korta kedjor**, högst två steg: svamp blir mat, läckvatten filtreras och kokas, skrot blir delar och delar blir verktyg.
+- **Verkstäder** gör förädlingen: kök, vattenrening, verkstad, sjukstuga. Varje verkstad kräver en invånare med rätt färdighet.
+- **Priser varierar mellan stationer.** En station med mycket vatten betalar lite för vatten. Priset räknas fram ur hur mycket stationen har och hur mycket den behöver.
+- **Tändstickorna tar slut med tiden**, så valutan blir värd mer. Det passar en värld som långsamt tömmer sina lager.
+
+**Längre kedjor senare**
+I början har ekonomin högst två steg. När forskningen öppnar nya verkstäder blir kedjorna längre, upp till fyra steg. Exempel:
+
+| Vad | Kedja | Ger |
+|---|---|---|
+| Dressin | Skrot blir delar. Delar, hjulaxlar från tågvagnar och stål blir en handdriven rälsvagn | Snabbare expeditioner och karavaner som bär mer. Den skramlar och hörs långt |
+| Cykelgenerator | Cykel, dynamo och delar | El utan diesel, men den som trampar blir hungrig och trött |
+| Kolfilter | Trä bränns till kol. Kol och tyg blir filter | Renare vatten och egna gasmaskfilter. Ett av de värdefullaste spåren |
+| Destilleri | Svamp eller rotfrukter jäses och bränns | Sprit för desinfektion, bränsle till lampor och handel |
+| Lyktor och batterier | Delar, elektronik och batterier laddade med el | Ljus som inte förbrukar syre |
+| Kompost | Matavfall och avföring | Bättre odling |
+
+**Handel**
+- Varor flyttas med karavaner som går på nätet. Det tar tid, och karavaner kan rånas.
+- Du kan skicka egna karavaner, och andra stationers karavaner kommer till dig.
+- En säker handelsväg kräver hävdade eller säkrade sträckor. Det knyter handeln till kontrollen på nätkartan.
+
+## Forskning
+
+**Böcker**
+- Böcker är en resurs med ämne: mekanik, el, odling, medicin, kemi, vatten och luft, och samhälle.
+- De finns på ytan. De bästa platserna är verkliga bibliotek: Stadsbiblioteket vid Odenplan, Kungliga biblioteket i Humlegården nära Östermalmstorg, och universitetet och KTH längs röda linjen. Expeditioner dit blir farliga men värdefulla.
+- Invånare kan läsa på fritiden och höja sina egna färdigheter lite. Den kunskapen dör med personen.
+
+**Biblioteket**
+- När stationen har samlat nog med böcker, till exempel 20, kan ni bygga ett bibliotek. Det kräver plats och ljus.
+- En invånare med hög **lärdom**, ett nytt värde 0 till 10, anställs som forskare i biblioteket.
+- Forskaren ger forskningspoäng varje dag. Poängen beror på forskarens lärdom, hur många böcker biblioteket har i ämnet och hur bra ljuset är.
+- Flera forskare går fortare, men varje forskare arbetar inte med något annat.
+- Det som är forskat står i böckerna. Om forskaren dör behåller stationen kunskapen, men forskningen går långsammare tills någon ny tar över.
+
+**Forskningsträdet**
+Varje gren kräver böcker i sitt ämne. Exempel på vad grenarna öppnar:
+
+| Gren | Exempel |
+|---|---|
+| Mekanik | Verkstad, svets, dressin |
+| El | Laga lysrör, cykelgenerator, ladda batterier, lyktor |
+| Odling | Kompost, bättre svamp, rotfrukter, odling i dålig luft |
+| Medicin | Sjukstuga, sterilisering, karantän som fungerar bättre |
+| Kemi | Destilleri, kolfilter, egna gasmaskfilter |
+| Vatten och luft | Bättre vattenrening, fläktar med filter, slussmur |
+| Samhälle | Skola, budbärare som går fortare, bättre förhandling |
+
+**Kunskap som handelsvara**
+- Böcker och avskrifter kan säljas och köpas. En station som har forskat på något kan sälja det.
+- Universitetets folk på kartan handlar med kunskap.
+
+## Bygga och ta isär
+
+**Så bygger du**
+
+| Vad | Hur |
+|---|---|
+| Ytor | Klicka och dra: odling, förråd, sovplatser, vakt |
+| Väggar och murar | Dra en linje på rutnätet |
+| Föremål | Placera ett i taget och vrid det: generator, brits, verkstad |
+| Riva och ta isär | Markera det som ska bort |
+
+- Det du lägger ut blir en ritning: en genomskinlig kontur.
+- Invånare bär dit material, och bygget växer synligt i steg: ställning och stomme, väggar, färdigt.
+- Byggarna arbetar synligt, och slag och borr hörs i tunneln.
+- Bygga och ta isär är handlingar i utility AI, som allt annat arbete.
+
+**Ta tillvara allt**
+Allt på stationen går att ta isär till material, och stationen förändras synligt.
+
+| Det du tar isär | Ger |
+|---|---|
+| Golvplattor av sten | Krossad sten till betong, sand till vattenfilter |
+| Tågvagnar | Stål, glas, kablar, stoppning till isolering |
+| Rulltrappor | Stål, kugghjul och kedjor till dressinen |
+| Kablar i tunnlarna | Koppar till el |
+| Biljettspärrar och skyltar | Plåt |
+| Kiosker | Trä, glas och det som finns kvar i dem |
+
+- Under plattorna finns betong, inte jord. Odling sker i bäddar med jord och kompost.
+- Allt har ett pris. Att ta isär rulltrappan mot ytan ger stål men tar bort en utgång.
+- Stationens konst, som Kungsträdgårdens statyer och väggmålningar, ger material, men invånare som värdesätter den blir ledsna.
 
 ## Valuta
 
@@ -187,7 +336,7 @@ Det finns inga zombies och inga odödliga ghouls. Hög strålning dödar inom da
 **De förvildade**
 - Människor som har förvildats av svält, isolering och mörker i åratal.
 - Desperata och oberäkneliga, men fortfarande människor.
-- Hör ihop med den öppna frågan om kannibalism.
+- De rånar karavaner och anfaller svaga utposter.
 
 ## Död
 
@@ -243,6 +392,12 @@ Varje mur dämpar en del av ljudet och ljuset. Fler lager ger mer skydd men kost
 - Den är aldrig helt tät. Generatorn hörs svagt, och varje gång portarna öppnas släpps ljud och ljus ut.
 - Ni hör också mindre av det som närmar sig. En tät station behöver vakter, en lyssningspost eller larm utanför.
 - En tät station behöver fläktar med filter, alltså el. Utan el blir luften dålig bakom muren.
+
+**Dressin och mur**
+Slussmuren är byggd för människor. En dressin kräver en bredare öppning över rälsen:
+- **Rälsport:** en bred skjutport över spåret. Svagare, och läcker mer ljud och ljus än en vanlig port.
+- **Slussen som garage:** slussen byggs så lång att en dressin får plats mellan portarna. Lite läckage, men kräver mycket betong och plats.
+- I forskningsträdet kräver rälsporten både dressinen (mekanik) och slussmuren (vatten och luft).
 
 **Material**
 - Betong går inte att tillverka. Den hämtas från byggarbetsplatser, till exempel bygget av nya blå linjen.
@@ -373,6 +528,19 @@ Spelet är oändligt. Fyra spår ger riktning:
 
 Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en generation, så att barnen som föddes på stationen blir dess vuxna.
 
+## Ton
+
+- Svält och barn som dör finns. Barns död visas utanför bild, och spelaren kan aldrig skada barn direkt.
+- Avrättning finns som straff i lagarna, med stor kostnad i moral.
+- Kannibalism, självmord och tortyr finns inte i spelet.
+
+## Gränssnitt
+
+- Läget visas mest i världen: gångstil, ikoner över huvuden när något är fel, och ljuset på stationen.
+- Paneler med behov, arbete och lager öppnas när du klickar på en invånare, en byggnad eller lagret.
+- Larm visas kort i kanten av skärmen när något kräver beslut: en flock närmar sig, maten räcker två dagar, ett val ska hållas.
+- Rapporter från andra stationer kommer som brev från budbärare.
+
 ## Grafik
 
 - Low poly 3D med runda figurer, platt skuggning och få eller inga texturer.
@@ -392,6 +560,14 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - `Knowledge` hör till en station och minns vad som sågs var och när.
 - En `Expedition` är en grupp invånare med packning som rör sig på nätet.
 - En klocka driver allt: stationer, expeditioner och agenter på nätet.
+- Varje ruta i rutnätet har lager: golv med material, vägg eller mur, föremål och yta. Då vet spelet vad som kan byggas, vad som går att ta isär och vad det ger.
+- Simuleringen tickar i en fast takt, oberoende av bildfrekvensen. Snabbare spelhastighet betyder fler tick per sekund, inte större steg.
+- Allt i simuleringen går att spara. Objekt pekar på varandra med id, inte med referenser till Godot-noder.
+- All slump i simuleringen går genom en slumpkälla med frö. Det gör tester förutsägbara och tunnlarna likadana vid varje besök.
+- Spelets texter går genom Godots översättningssystem med nycklar från början, så att fler språk kan läggas till.
+- Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
+- Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
+- `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.
 
 ## Språk
 
@@ -402,7 +578,6 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 
 ## Öppna frågor
 
-- **Ton:** Svält och barn som dör är bestämt. Självmord, tortyr och kannibalism är inte bestämt.
 - **Namn:** Bunkerbyn är arbetsnamn. Ett engelskt namn kan behövas för Steam.
 - **Ljud och musik.**
 - **Plattformar och pris.**
