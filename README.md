@@ -50,9 +50,9 @@ Alla beslut finns i [docs/DESIGN.md](docs/DESIGN.md).
 Bunkerbyn/
   project.godot
   Bunkerbyn.csproj
-  scenes/         Station.tscn, Tunnel.tscn, Resident.tscn
+  scenes/         Station.tscn, TunnelSegment.tscn, Resident.tscn, tunnelmoduler
   scripts/
-    Simulation/   World, Station, Resident, Needs, Actions, Morale, Clock (vanlig C#, inga noder)
+    Simulation/   World, Station, TunnelSegment, Grid, Knowledge, Resident, Needs, Actions, Clock (vanlig C#, inga noder)
     View/         ResidentView, CameraRig, StationView (Godot-noder)
   models/         .glb från Blender
   docs/

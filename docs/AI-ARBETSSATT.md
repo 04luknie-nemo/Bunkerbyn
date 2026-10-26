@@ -88,3 +88,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-23 | De brända | Claude Code | Ta över | Lade till människor utanför stationerna, de brända och de förvildade, i docs/DESIGN.md | #1  |
 | 2026-10-26 | Nätkartan | Claude Code | Ta över | Lade till nätkartan som långsiktigt mål och regeln om flera stationer i docs/DESIGN.md, AGENTS.md och README | –   |
 | 2026-10-26 | Strid och barrikader | Claude Code | Ta över | Lade till strid i stationsvyn, barrikader, naturliga skydd och länk till den handritade nätkartan i docs/DESIGN.md | #12 |
+| 2026-10-26 | Tunnlar och kontroll | Claude Code | Ta över | Lade till tunnlarna, levande världen, ljus och synfält, stationens kunskap, ljud, murar i lager och kontroll över sträckor och stationer i docs/DESIGN.md. Strukturregler i AGENTS.md och README | –   |

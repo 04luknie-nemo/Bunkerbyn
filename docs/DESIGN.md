@@ -229,6 +229,27 @@ Moskvas tunnelbana byggdes med hermetiska portar. Stockholms gjorde det inte, s�
 
 En sträckas tillstånd på nätkartan beror på vad du har byggt där.
 
+**Murar i lager**
+Varje mur dämpar en del av ljudet och ljuset. Fler lager ger mer skydd men kostar mer.
+
+| Lager | Exempel | Dämpar | Kostar |
+|---|---|---|---|
+| Ytterst | Barrikad av sliprar och vagnar, larm av burkar | Lite, men varnar | Billigt, snabbt |
+| Mitten | Svetsad port av stålplåt | Mycket ljus, en del ljud | Stål, gas, en svetsare |
+| Innerst | Slussmur | Nästan allt ljus, mycket ljud, rök | Betong, stål, gummi, isolering, många arbetsdagar |
+
+**Slussmuren** är stationens sista uppgradering: två portar med ett utrymme emellan.
+- Den dämpar generatorn och pratet kraftigt, släpper inte ut ljus och håller rök och förorenad luft ute.
+- Den är aldrig helt tät. Generatorn hörs svagt, och varje gång portarna öppnas släpps ljud och ljus ut.
+- Ni hör också mindre av det som närmar sig. En tät station behöver vakter, en lyssningspost eller larm utanför.
+- En tät station behöver fläktar med filter, alltså el. Utan el blir luften dålig bakom muren.
+
+**Material**
+- Betong går inte att tillverka. Den hämtas från byggarbetsplatser, till exempel bygget av nya blå linjen.
+- Isolering kommer från madrasser, mineralull ur husväggar på ytan och gummi från tåg.
+- Stål kommer från tågvagnar och räls.
+- Invånare som bygger mur odlar inte och vaktar inte. En tät station kräver expeditioner efter material.
+
 **Naturliga skydd och svagheter**
 - **Ändstationer**, som Kungsträdgården, har bara en ingång från tunnelnätet och är lättast att försvara.
 - **Blå linjen** går helt under jord i berg och är bäst skyddad.
@@ -237,11 +258,109 @@ En sträckas tillstånd på nätkartan beror på vad du har byggt där.
 - **Uppgångar och rulltrappor** är stationernas svaga punkter mot ytan.
 - **Kymlinge**, stationen på blå linjen som aldrig öppnades, är en naturlig plats för något som gömmer sig.
 
+**Kontroll över sträckor**
+Kontroll bygger på att du är där och kan försörja platsen. Varje krav är en regel i simuleringen.
+
+| Steg | Krav | På kartan |
+|---|---|---|
+| Okänd | Ingen har varit där | Syns inte |
+| Utforskad | Någon har gått hela sträckan | Grå linje |
+| Hävdad | En post i andra änden, eller din station där | Tunn linje i din färg |
+| Säkrad | Inget bo eller hot kvar, och båda ändarna hålls | Tjock linje i din färg |
+| Försörjd | Sträckan hänger ihop med din station genom dina andra sträckor | Tjock linje som lyser |
+
+- En post är en barrikad med en vakt, en lykta och stationens symbol målad på tunnelväggen. Symbolen syns i 3D.
+- En sträcka kostar att hålla: vakter, bränsle till ljus och patruller.
+- Om försörjningen bryts, posten överges eller ett bo flyttar in, faller sträckan tillbaka ett steg i taget. Det hindrar spelaren från att måla hela kartan.
+- När du klickar på en sträcka visar spelet vad som är uppfyllt och vad som saknas, till exempel "Post i andra änden: behöver 1 vakt, 1 lykta, sliprar".
+
+**Kontroll över tomma stationer**
+
+| Steg | Krav |
+|---|---|
+| Utpost | Stationen är tom och rensad, och en hävdad sträcka leder dit |
+| Bosättning | 3 till 5 invånare flyttar dit, en av dem ledare. Ljus, vatten och mat för en vecka |
+| Station | Fler än 15 invånare, egen generator och egen odling. Får egen stationsvy och egna val av chef |
+
+**Stationer där det bor folk**
+
+| Sätt | Hur | Följd |
+|---|---|---|
+| Förbund | Handel och förtroende över tid | Får förbundets färg, inte din. Lojal men egen |
+| Anslutning | Du försörjer dem när de har det svårt, och de röstar för att gå med | Hög lojalitet |
+| Inflytande | Du får in folk och stöd tills din kandidat blir chef | Medel lojalitet, risk om det avslöjas |
+| Våld | Strid i stationsvyn | Låg moral, fiender och risk för uppror länge |
+
+**Färger på kartan**
+- Din färg för det du kontrollerar.
+- Andras färger bara där du har varit eller fått veta genom handel.
+- Kartan visar det du senast visste. En annan stations färg kan ha ändrats sedan dess.
+- Omstridda sträckor visas randiga.
+
 **Första expansionen**
 Kungsträdgården ligger på blå linjen, som leder till T-Centralen. Navet där alla linjer möts blir första stora målet. Vägen dit går genom halvfärdiga och rasade tunnlar.
 
 **Ordning**
 Nätkartan byggs efter milstolparna i README. Stationsvyn måste fungera först. Simuleringen byggs ändå för flera stationer från början, se Teknik.
+
+## Tunnlarna
+
+**Från stationen till tunneln**
+- Ingen mellansekvens. Du ser expeditionen gå genom porten och in i mörkret. De första hundra metrarna tunnel hör till stationens scen.
+- Längre bort är varje sträcka på nätkartan en egen scen. Godot laddar den i bakgrunden medan expeditionen går, så att övergången blir en kort tonning, inte en laddningsskärm.
+
+**Sträckor av moduler**
+- Stationerna byggs för hand, eftersom de är verkliga platser.
+- Tunnlarna sätts ihop av moduler: rak bit, kurva, ras, sidorum, servicedörr, nödutgång.
+- Varje sträcka byggs med samma frö varje gång, så den ser likadan ut vid nästa besök. Ett ras du har röjt förblir röjt.
+
+**En levande värld**
+- Hela nätet simuleras hela tiden: handelskaravaner, flockar, flyktingar och rövare rör sig på sträckorna med egna mål.
+- De är bara data: vilken sträcka, hur långt in och vart de är på väg. Hundratals sådana agenter kostar nästan ingenting.
+- Möten uppstår av sig själva. När en agent och din expedition är på samma sträcka och den är laddad, får agenten en kropp i 3D. Inga möten slumpas fram ur tomma intet.
+- En flock som går mot din station kommer verkligen fram, även om du inte tittar.
+- Tätheten styrs av sträckans tillstånd. Säkra sträckor har få möten, farliga många. Barrikader och vakter minskar dem.
+
+## Ljus, mörker och synfält
+
+- Allt i den laddade sträckan finns och ritas i 3D. Det som inte är upplyst syns inte, eftersom inget ljus träffar det.
+- Tunnlarna har inget grundljus. Mörkret ska vara svart, inte grått.
+- Andras ljus syns på långt håll. En handlares lykta syns innan handlaren gör det. En flock syns som silhuetter mot en upplyst plats.
+- Ljuskällor räcker olika långt: ficklampan långt i en smal kon, facklan kort runt om, lyktan medelavstånd åt alla håll.
+- Ett karaktärsdrag kan ge bättre mörkerseende.
+- Ljuset lockar. Ju starkare du lyser, desto längre syns du.
+- Simuleringen räknar ljusnivå och synlinjer på sitt eget rutnät, så att AI:n vet vem som ser vem. Godot ritar samma ljus, men räknar inte åt simuleringen.
+- Sträckor du har besökt men inte är på just nu visas grå på nätkartan, som de såg ut senast.
+
+**Stationens kunskap**
+- Stationen minns det invånarna har sett: varje plats är okänd, eller sågs senast en viss dag och såg ut på ett visst sätt.
+- Minnet kan vara fel. Ett ras eller en flock som har kommit sedan dess syns inte förrän någon går dit igen.
+- En expedition för hem det den har sett. Dör expeditionen innan dess förlorar stationen kunskapen, tills någon hittar kroppen och dagboken.
+
+## Ljud
+
+Tunnlar leder ljud långt. Ljudet följer tunneln runt hörn men går inte genom berg.
+
+| Ljud | Hörs ungefär |
+|---|---|
+| Steg när man smyger | 5 m |
+| Vanliga steg | 15 m |
+| Prat | 25 m |
+| Springa, bära tungt | 40 m |
+| Generatorn | 60 m, hela tiden |
+| Metall som slår, en dörr som smäller | 100 m |
+| Skott | Hela sträckan och in i grannsträckorna |
+
+- Varje ljud är en händelse i simuleringen med plats, styrka och typ. Det sprids längs rutnätet där det går att gå. Dörrar och murar dämpar.
+- Starka ljud fortsätter in i grannsträckorna med lägre styrka, även om de inte är laddade.
+- Varje varelse har en hörsel. Muterade djur ser dåligt men hör bra.
+- Ljud som du inte ser källan till visas som en riktning vid kanten av ljuset.
+- I Godot spelas ljudet med `AudioStreamPlayer3D` och eko i tunnlarna. Simuleringen avgör vem som hör.
+
+**Val som följer av ljud och ljus**
+- Generatorn ger ljus och mat men brummet lockar djur. Att stänga av den ett tag blir ett taktiskt val.
+- Ficklampan syns långt men är tyst. Facklan syns kort men knastrar.
+- Ett skott löser problemet framför dig men kan locka ett större från grannsträckan.
 
 ## Mål
 
@@ -267,6 +386,12 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - Blender för modeller, exporterade som `.glb`.
 - Simuleringen är vanlig C# utan Godot-noder. Godot-noderna visar bara simuleringen. Det gör logiken testbar och multiplayer möjligt senare.
 - Simuleringen klarar flera stationer från början. Invånare, lager, el och moral hör till en `Station`, inte till spelet som helhet. En `World` håller alla stationer och tunnelsträckor. Under milstolparna finns bara en station i världen.
+- `World` är ett nät: `Station` är noder och `TunnelSegment` är kanter med längd, tillstånd, ägare och kontrollsteg.
+- Positioner i simuleringen är abstrakta: en station, eller en sträcka plus ett avstånd i meter. 3D-koordinater finns bara i vyn.
+- Varje station och sträcka har ett rutnät i simuleringen, en ruta per meter, som säger var det går att gå och vad som skymmer sikt och ljud. Vägsökning, synlinjer, ljus och ljud räknas på rutnätet i vanlig C#.
+- `Knowledge` hör till en station och minns vad som sågs var och när.
+- En `Expedition` är en grupp invånare med packning som rör sig på nätet.
+- En klocka driver allt: stationer, expeditioner och agenter på nätet.
 
 ## Språk
 
