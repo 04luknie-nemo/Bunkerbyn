@@ -246,6 +246,38 @@ Varje gren kräver böcker i sitt ämne. Exempel på vad grenarna öppnar:
 - Böcker och avskrifter kan säljas och köpas. En station som har forskat på något kan sälja det.
 - Universitetets folk på kartan handlar med kunskap.
 
+## Bygga och ta isär
+
+**Så bygger du**
+
+| Vad | Hur |
+|---|---|
+| Ytor | Klicka och dra: odling, förråd, sovplatser, vakt |
+| Väggar och murar | Dra en linje på rutnätet |
+| Föremål | Placera ett i taget och vrid det: generator, brits, verkstad |
+| Riva och ta isär | Markera det som ska bort |
+
+- Det du lägger ut blir en ritning: en genomskinlig kontur.
+- Invånare bär dit material, och bygget växer synligt i steg: ställning och stomme, väggar, färdigt.
+- Byggarna arbetar synligt, och slag och borr hörs i tunneln.
+- Bygga och ta isär är handlingar i utility AI, som allt annat arbete.
+
+**Ta tillvara allt**
+Allt på stationen går att ta isär till material, och stationen förändras synligt.
+
+| Det du tar isär | Ger |
+|---|---|
+| Golvplattor av sten | Krossad sten till betong, sand till vattenfilter |
+| Tågvagnar | Stål, glas, kablar, stoppning till isolering |
+| Rulltrappor | Stål, kugghjul och kedjor till dressinen |
+| Kablar i tunnlarna | Koppar till el |
+| Biljettspärrar och skyltar | Plåt |
+| Kiosker | Trä, glas och det som finns kvar i dem |
+
+- Under plattorna finns betong, inte jord. Odling sker i bäddar med jord och kompost.
+- Allt har ett pris. Att ta isär rulltrappan mot ytan ger stål men tar bort en utgång.
+- Stationens konst, som Kungsträdgårdens statyer och väggmålningar, ger material, men invånare som värdesätter den blir ledsna.
+
 ## Valuta
 
 Ammunition som valuta är Metros mest kända idé och används inte. Bunkerbyn har en svensk valuta i tre nivåer:
@@ -360,6 +392,12 @@ Varje mur dämpar en del av ljudet och ljuset. Fler lager ger mer skydd men kost
 - Den är aldrig helt tät. Generatorn hörs svagt, och varje gång portarna öppnas släpps ljud och ljus ut.
 - Ni hör också mindre av det som närmar sig. En tät station behöver vakter, en lyssningspost eller larm utanför.
 - En tät station behöver fläktar med filter, alltså el. Utan el blir luften dålig bakom muren.
+
+**Dressin och mur**
+Slussmuren är byggd för människor. En dressin kräver en bredare öppning över rälsen:
+- **Rälsport:** en bred skjutport över spåret. Svagare, och läcker mer ljud och ljus än en vanlig port.
+- **Slussen som garage:** slussen byggs så lång att en dressin får plats mellan portarna. Lite läckage, men kräver mycket betong och plats.
+- I forskningsträdet kräver rälsporten både dressinen (mekanik) och slussmuren (vatten och luft).
 
 **Material**
 - Betong går inte att tillverka. Den hämtas från byggarbetsplatser, till exempel bygget av nya blå linjen.
@@ -522,6 +560,7 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - `Knowledge` hör till en station och minns vad som sågs var och när.
 - En `Expedition` är en grupp invånare med packning som rör sig på nätet.
 - En klocka driver allt: stationer, expeditioner och agenter på nätet.
+- Varje ruta i rutnätet har lager: golv med material, vägg eller mur, föremål och yta. Då vet spelet vad som kan byggas, vad som går att ta isär och vad det ger.
 - Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
 - Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
 - `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.
