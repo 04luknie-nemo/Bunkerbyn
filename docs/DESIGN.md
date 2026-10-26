@@ -85,6 +85,7 @@ Bygg för 50 invånare först och optimera mot 200 senare.
 
 **Karaktärsdrag**
 - Färdigheter 0 till 10: odling, mekanik, medicin, matlagning, strid och förhandling. Två till tre höga per person.
+- Lärdom 0 till 10: hur bra personen är på att läsa och forska.
 - Personlighet: ett till två drag, till exempel modig, feg, girig, omtänksam, hetsig eller lugn.
 - Bakgrund: en rad om livet före kriget. Ger ingen bonus.
 
@@ -197,10 +198,53 @@ Chefen beslutar lagar. Varje lag gillas av vissa personligheter och ogillas av a
 - **Priser varierar mellan stationer.** En station med mycket vatten betalar lite för vatten. Priset räknas fram ur hur mycket stationen har och hur mycket den behöver.
 - **Tändstickorna tar slut med tiden**, så valutan blir värd mer. Det passar en värld som långsamt tömmer sina lager.
 
+**Längre kedjor senare**
+I början har ekonomin högst två steg. När forskningen öppnar nya verkstäder blir kedjorna längre, upp till fyra steg. Exempel:
+
+| Vad | Kedja | Ger |
+|---|---|---|
+| Dressin | Skrot blir delar. Delar, hjulaxlar från tågvagnar och stål blir en handdriven rälsvagn | Snabbare expeditioner och karavaner som bär mer. Den skramlar och hörs långt |
+| Cykelgenerator | Cykel, dynamo och delar | El utan diesel, men den som trampar blir hungrig och trött |
+| Kolfilter | Trä bränns till kol. Kol och tyg blir filter | Renare vatten och egna gasmaskfilter. Ett av de värdefullaste spåren |
+| Destilleri | Svamp eller rotfrukter jäses och bränns | Sprit för desinfektion, bränsle till lampor och handel |
+| Lyktor och batterier | Delar, elektronik och batterier laddade med el | Ljus som inte förbrukar syre |
+| Kompost | Matavfall och avföring | Bättre odling |
+
 **Handel**
 - Varor flyttas med karavaner som går på nätet. Det tar tid, och karavaner kan rånas.
 - Du kan skicka egna karavaner, och andra stationers karavaner kommer till dig.
 - En säker handelsväg kräver hävdade eller säkrade sträckor. Det knyter handeln till kontrollen på nätkartan.
+
+## Forskning
+
+**Böcker**
+- Böcker är en resurs med ämne: mekanik, el, odling, medicin, kemi, vatten och luft, och samhälle.
+- De finns på ytan. De bästa platserna är verkliga bibliotek: Stadsbiblioteket vid Odenplan, Kungliga biblioteket i Humlegården nära Östermalmstorg, och universitetet och KTH längs röda linjen. Expeditioner dit blir farliga men värdefulla.
+- Invånare kan läsa på fritiden och höja sina egna färdigheter lite. Den kunskapen dör med personen.
+
+**Biblioteket**
+- När stationen har samlat nog med böcker, till exempel 20, kan ni bygga ett bibliotek. Det kräver plats och ljus.
+- En invånare med hög **lärdom**, ett nytt värde 0 till 10, anställs som forskare i biblioteket.
+- Forskaren ger forskningspoäng varje dag. Poängen beror på forskarens lärdom, hur många böcker biblioteket har i ämnet och hur bra ljuset är.
+- Flera forskare går fortare, men varje forskare arbetar inte med något annat.
+- Det som är forskat står i böckerna. Om forskaren dör behåller stationen kunskapen, men forskningen går långsammare tills någon ny tar över.
+
+**Forskningsträdet**
+Varje gren kräver böcker i sitt ämne. Exempel på vad grenarna öppnar:
+
+| Gren | Exempel |
+|---|---|
+| Mekanik | Verkstad, svets, dressin |
+| El | Laga lysrör, cykelgenerator, ladda batterier, lyktor |
+| Odling | Kompost, bättre svamp, rotfrukter, odling i dålig luft |
+| Medicin | Sjukstuga, sterilisering, karantän som fungerar bättre |
+| Kemi | Destilleri, kolfilter, egna gasmaskfilter |
+| Vatten och luft | Bättre vattenrening, fläktar med filter, slussmur |
+| Samhälle | Skola, budbärare som går fortare, bättre förhandling |
+
+**Kunskap som handelsvara**
+- Böcker och avskrifter kan säljas och köpas. En station som har forskat på något kan sälja det.
+- Universitetets folk på kartan handlar med kunskap.
 
 ## Valuta
 
