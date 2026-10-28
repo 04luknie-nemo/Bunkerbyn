@@ -21,6 +21,34 @@ Jag väljer nivå för varje uppgift och säger det i början.
 
 Nivå 1 och 2 är standard. Nivå 3 använder jag för kod jag redan förstår, eller när jag vill se ett förslag att jämföra med.
 
+## Kärna och rörledningar
+
+Koden delas i två högar. Kärnan är där jag lär mig mest och där spelet blir mitt. Rörledningarna är mycket kod som lär mig lite, och där ger AI mest fart.
+
+| Kärnan: jag skriver | Rörledningar: AI skriver, jag granskar |
+|---|---|
+| Simuleringen: rutnät, A*, behov, utility AI, klocka, val | Godot-limmet: noder som ritar simuleringen och kopplar signaler |
+| Spelregler: odling, lager, moral, kontroll | Gränssnittets layout: paneler, knappar, larm |
+| Allt jag ska kunna förklara på en intervju | Shaders, ljus och kamerafinlir |
+| | CI, sparning till JSON, PO-filer, inställningar |
+| | Datafiler: varor, karaktärsdrag, namn, utkast till dialog |
+
+- I kärnan är nivå 1 och 2 standard. AI:n skriver inte kärnkod om jag inte uttryckligen ber om det.
+- I rörledningarna får AI:n ta över (nivå 3) när jag ber om det.
+- Har jag skrivit något i kärnan en gång själv får AI:n skriva liknande kod nästa gång.
+
+## Arbetsflöde per issue
+
+1. **Planera:** AI:n förklarar utan kod hur issuen kan lösas. Cirka 10 minuter.
+2. **Testfall:** AI:n föreslår testfall för det som ska byggas. Jag skriver koden tills testerna går igenom.
+3. **Skriva:** Jag skriver kärnan. Sitter jag fast i 15 minuter frågar jag direkt.
+4. **Granska:** AI:n granskar pull requesten med kommentarer på raderna.
+5. **Rörledningar:** När kärnan fungerar skriver AI:n vyn, gränssnittet och limmet. Jag granskar.
+
+**Felsökning:** "Säg vad som är fel" när jag vill vidare. "Ställ frågor tills jag ser felet" när jag vill lära mig.
+
+**Tumregel:** Om jag kan förklara varje rad är koden min, oavsett vem som skrev den.
+
 ## Arbeta i små etapper
 
 En etapp är en sak, till exempel "gubben går en ruta åt gången". Varje etapp följer samma steg:
@@ -94,3 +122,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-26 | Bygga och ta isär | Claude Code | Ta över | Lade till byggande med ritningar, att ta isär stationen till material, dressin och rälsport, och lager per ruta i docs/DESIGN.md | #14 |
 | 2026-10-26 | Tekniska grundregler | Claude Code | Ta över | Lade till fast takt, sparbar simulering, slumpkälla med frö och texter via översättningssystemet i docs/DESIGN.md och AGENTS.md | #14 |
 | 2026-10-26 | Teknikval | Claude Code | Ta över | Skrev in valen om 20 tick per sekund, id som int, egen slumpgenerator och PO-filer i docs/DESIGN.md | –   |
+| 2026-10-28 | Kärna och rörledningar | Claude Code | Ta över | Lade till uppdelningen i kärna och rörledningar och arbetsflödet per issue i det här dokumentet och AGENTS.md | –   |
