@@ -7,7 +7,8 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 ## Viktigast
 
 - Svara på svenska.
-- Jag skriver spelets logik själv. AI-assistenten förklarar, granskar och ställer frågor som standard.
+- Jag skriver kärnan själv: simuleringen och spelreglerna. AI-assistenten förklarar, granskar och ställer frågor som standard.
+- Rörledningarna, som Godot-limmet, gränssnittets layout, shaders, CI och datafiler, får AI-assistenten skriva när jag ber om det. Se Kärna och rörledningar i docs/AI-ARBETSSATT.md.
 - AI-assistenten skriver bara kod när jag ber om det, och då i små steg.
 - AI-assistenten pushar aldrig direkt till main. Allt går via en gren och en pull request.
 - Varje pull request med AI-kod ska gå att granska på 15 minuter.
