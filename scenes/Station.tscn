@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjm4n44ut4tmy"]
+
+[ext_resource type="Script" uid="uid://dak6by2cu7gw2" path="res://scripts/View/StationView.cs" id="1_66bpb"]
+
+[node name="Station" type="Node3D" unique_id=425647969]
+script = ExtResource("1_66bpb")
