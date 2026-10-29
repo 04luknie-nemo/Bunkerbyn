@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjm4n44ut4tmy"]
 
 [ext_resource type="Script" uid="uid://dak6by2cu7gw2" path="res://scripts/View/StationView.cs" id="1_66bpb"]
+[ext_resource type="PackedScene" uid="uid://cd2fa4w4mrosc" path="res://scenes/CameraRig.tscn" id="2_wy22o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_66bpb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,3 +30,5 @@ shadow_enabled = true
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=269094921]
 mesh = SubResource("PlaneMesh_8x14f")
+
+[node name="CameraRig" parent="." unique_id=320358466 instance=ExtResource("2_wy22o")]
