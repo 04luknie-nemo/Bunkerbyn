@@ -550,7 +550,7 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 
 ## Teknik
 
-- Godot 4 med C# och .NET 8.
+- Godot 4 med C# och .NET 10.
 - Blender för modeller, exporterade som `.glb`.
 - Simuleringen är vanlig C# utan Godot-noder. Godot-noderna visar bara simuleringen. Det gör logiken testbar och multiplayer möjligt senare.
 - Simuleringen klarar flera stationer från början. Invånare, lager, el och moral hör till en `Station`, inte till spelet som helhet. En `World` håller alla stationer och tunnelsträckor. Under milstolparna finns bara en station i världen.

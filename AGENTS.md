@@ -16,7 +16,7 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 
 ## Projekt
 
-- Bunkerbyn (arbetsnamn): kolonisimulator med överlevnad i Stockholms tunnelbana, byggd i Godot 4 med C# och .NET 8.
+- Bunkerbyn (arbetsnamn): kolonisimulator med överlevnad i Stockholms tunnelbana, byggd i Godot 4 med C# och .NET 10.
 - Utvecklas på Ubuntu Linux.
 - Low poly 3D med runda figurer. Kamera i 3/4-vy som roterar fritt.
 - Alla designbeslut finns i docs/DESIGN.md. Läs den innan du föreslår mekaniker.

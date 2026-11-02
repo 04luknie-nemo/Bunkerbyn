@@ -36,7 +36,7 @@ Alla beslut finns i [docs/DESIGN.md](docs/DESIGN.md).
 | Område | Val |
 |---|---|
 | Motor | Godot 4 (.NET) |
-| Språk | C#, .NET 8 |
+| Språk | C#, .NET 10 |
 | Utvecklingsmiljö | Ubuntu Linux |
 | Kamera | 3/4-vy uppifrån, roterar, lutar och zoomar fritt |
 | Grafik | Low poly 3D med runda figurer och platt skuggning |
@@ -86,7 +86,7 @@ En station, en tunnel och en ytkarta. Nätkartan med grannstationer byggs när m
 
 ## Kom igång
 
-Se [setup/README.md](setup/README.md) för installation av .NET 8, Godot 4 och Blender på Ubuntu.
+Se [setup/README.md](setup/README.md) för installation av .NET 10, Godot 4 och Blender på Ubuntu.
 
 ## Arbetssätt med AI
 
