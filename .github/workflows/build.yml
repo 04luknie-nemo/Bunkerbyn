@@ -28,5 +28,5 @@ jobs:
         if: steps.check.outputs.exists == 'true' && hashFiles('.config/dotnet-tools.json') != ''
       - run: dotnet build
         if: steps.check.outputs.exists == 'true'
-      - run: dotnet format --verify-no-changes
+      - run: dotnet format Bunkerbyn.csproj --verify-no-changes
         if: steps.check.outputs.exists == 'true'
