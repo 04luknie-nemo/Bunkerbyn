@@ -3,13 +3,13 @@ using System;
 
 public partial class CameraRig : Node3D
 {
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-    }
+	[Export] public float MoveSpeed { get; set; } = 10f;
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
+	public override void _Process(double delta)
+	{
+		Vector2 input = Input.GetVector("camera_left", "camera_right", "camera_forward", "camera_back");
+		Vector3 direction = new Vector3(input.X, 0f, input.Y);
+		direction = Transform.Basis * direction;
+		Position += direction * MoveSpeed * (float)delta;
+	}
 }
