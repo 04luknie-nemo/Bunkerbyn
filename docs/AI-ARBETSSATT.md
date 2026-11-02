@@ -124,4 +124,9 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-10-26 | Teknikval | Claude Code | Ta över | Skrev in valen om 20 tick per sekund, id som int, egen slumpgenerator och PO-filer i docs/DESIGN.md | –   |
 | 2026-10-28 | Kärna och rörledningar | Claude Code | Ta över | Lade till uppdelningen i kärna och rörledningar och arbetsflödet per issue i det här dokumentet och AGENTS.md | –   |
 | 2026-10-28 | .NET 10 | Claude Code | Ta över | Bytte .NET 8 mot .NET 10 i README, AGENTS.md, DESIGN.md, setup/README.md och build.yml, eftersom Ubuntu 26.04 bara har .NET 10 i apt och .NET 8 slutar få stöd i november 2026 | –   |
+<<<<<<< HEAD
 | 2026-11-02 | Indrag i C# (#2) | Claude Code | Ta över | Bytte tabbar mot 4 mellanslag i CameraRig.cs och StationView.cs, och slog ihop main med .NET 10 i grenen issue-2-kamera. På Lukas begäran | –   |
+=======
+| 2026-11-02 | dotnet format i CI | Claude Code | Ta över | Lade till Bunkerbyn.csproj i dotnet format i build.yml och setup/README.md, eftersom mappen har både .csproj och .sln | –   |
+>>>>>>> origin/main
+| 2026-11-02 | Kamera (#2) | Claude Code | Ta över | Skrev zoom med mushjulet, lutning och rotation med musen, och mjuk rörelse med mål och Lerp i CameraRig.cs. WASD och Q/E skrev Lukas själv | –   |

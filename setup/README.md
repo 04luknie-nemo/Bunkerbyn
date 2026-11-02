@@ -56,11 +56,11 @@ Varje fil läggs till i ASSETS.md med källa och licens.
 Reglerna står i `.editorconfig`. Kontrollera formateringen innan du pushar:
 
 ```bash
-dotnet format --verify-no-changes
+dotnet format Bunkerbyn.csproj --verify-no-changes
 ```
 
-Utan flaggan rättar kommandot filerna. I VS Code formaterar tillägget C# Dev Kit vid sparning enligt samma regler.
+Utan flaggan rättar kommandot filerna. Projektfilen måste anges, eftersom mappen innehåller både `Bunkerbyn.csproj` och `Bunkerbyn.sln`. I VS Code formaterar tillägget C# Dev Kit vid sparning enligt samma regler.
 
 ## CI
 
-`.github/workflows/build.yml` kör `dotnet build` och `dotnet format --verify-no-changes` på varje pull request mot main. Godot-projektet byggs med paketet `Godot.NET.Sdk` från NuGet, så CI behöver inte Godot installerat. Stegen hoppas över tills det finns en `.csproj`.
+`.github/workflows/build.yml` kör `dotnet build` och `dotnet format Bunkerbyn.csproj --verify-no-changes` på varje pull request mot main. Godot-projektet byggs med paketet `Godot.NET.Sdk` från NuGet, så CI behöver inte Godot installerat. Stegen hoppas över tills det finns en `.csproj`.
