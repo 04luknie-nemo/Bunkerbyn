@@ -2,15 +2,15 @@
 
 Instruktionerna gäller Ubuntu Linux. Projektet saknar kod än så länge, så stegen under Skapa projektet görs en gång när arbetet börjar.
 
-## 1. .NET 8 SDK
+## 1. .NET 10 SDK
 
 ```bash
 sudo apt update
-sudo apt install -y dotnet-sdk-8.0
-dotnet --version
+sudo apt install -y dotnet-sdk-10.0
+dotnet --list-sdks
 ```
 
-Versionen ska börja med `8.`.
+En rad ska börja med `10.`. .NET 10 är en LTS-version med stöd till november 2028.
 
 ## 2. Godot 4 med .NET
 
@@ -32,7 +32,8 @@ Görs en gång:
 
 1. Starta Godot och skapa ett nytt projekt i rotmappen för repot, med renderaren Forward+.
 2. Skapa ett första C#-skript i Godot. Då skapar Godot `Bunkerbyn.csproj` och `Bunkerbyn.sln`.
-3. Committa `project.godot`, `.csproj`, `.sln` och alla `.import`-filer. Mappen `.godot/` ignoreras.
+3. Öppna `Bunkerbyn.csproj` och sätt `<TargetFramework>net10.0</TargetFramework>` om Godot har skrivit en äldre version. Kör `dotnet build` för att kontrollera.
+4. Committa `project.godot`, `.csproj`, `.sln` och alla `.import`-filer. Mappen `.godot/` ignoreras.
 
 ## 5. Kör spelet
 
