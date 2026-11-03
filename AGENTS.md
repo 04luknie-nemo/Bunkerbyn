@@ -31,8 +31,16 @@ Läs docs/AI-ARBETSSATT.md. Den beskriver hur vi arbetar tillsammans och gäller
 - Innehåll som föremål, byggnader, karaktärsdrag och lagar definieras som data, inte som `enum` eller hårdkodade klasser.
 - Simuleringen tickar i fast takt (20 tick per sekund vid 1x), går att spara och tar all slump från en källa med frö.
 - Objekt pekar på varandra med `int`-id, inte med referenser. Fält som pekar på något annat heter som objektet plus `Id`, till exempel `ResidentId` eller `HomeStationId`.
+- Inga Godot-autoloads, statiska singletons eller globala fält för simuleringens tillstånd. Beroenden som `World` och slumpkällan skickas in, oftast via konstruktorn.
 - Namn på klasser, metoder och variabler skrivs på engelska.
 - Spelets texter skrivs på engelska och går genom Godots översättningssystem. Platsnamn är svenska.
+
+## Kursen Problemlösning
+
+Arbetssättet följer kursen Problemlösning. Se Granskning med kursens frågor i docs/AI-ARBETSSATT.md.
+
+- Designbeslut skrivs i docs/BESLUT.md, med alternativ och avvägning. Fel som tog lång tid skrivs i docs/FELSOKNING.md.
+- AI-assistenten ställer kursens frågor vid granskning men skriver inte posterna i BESLUT.md och FELSOKNING.md åt mig, utom när jag ber om det.
 
 ## Upphovsrätt
 

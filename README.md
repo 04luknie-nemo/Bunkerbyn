@@ -101,6 +101,8 @@ Reglerna för AI-assistenter står i [AGENTS.md](AGENTS.md). [docs/AI-ARBETSSATT
 | `ASSETS.md` | Källa och licens för varje asset |
 | `docs/DESIGN.md` | Alla designbeslut och öppna frågor |
 | `docs/AI-ARBETSSATT.md` | Arbetssätt och AI-logg |
+| `docs/BESLUT.md` | Designbeslut med alternativ och avvägningar |
+| `docs/FELSOKNING.md` | Felsökningslogg från symptom till rotorsak |
 | `setup/README.md` | Installation och körning |
 | `.editorconfig` | Formateringsregler för C# |
 | `.github/workflows/build.yml` | Bygge och formatkontroll på varje pull request |

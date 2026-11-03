@@ -96,6 +96,22 @@ Använder du en webbchatt: klistra in innehållet i AGENTS.md i början av chatt
 
 Om en punkt inte stämmer frågar jag AI:n tills den gör det, eller skriver om koden själv.
 
+## Granskning med kursens frågor
+
+Bunkerbyn är ett hobbyprojekt, men arbetssättet följer kursen Problemlösning för att träna det kursen tränar. Begreppen kommer från lärarens wiki: [Problemlösning](https://mardby.se/w/index.php?title=Probleml%C3%B6sning).
+
+Vid granskning av en pull request ställer AI-assistenten de här frågorna, där de passar:
+
+- **Designbeslut eller syntaxbeslut?** Finns det ett beslut med avvägningar som borde stå i [BESLUT.md](BESLUT.md)?
+- **Vilket problem ropar efter mönstret?** Vilka signaler finns, och vilka alternativ valdes bort?
+- **Overkill?** Lägger mönstret till struktur utan motsvarande vinst?
+- **Global åtkomst?** Finns statiska fält, singletons eller Godot-autoloads som döljer beroenden? Beroenden ska skickas in.
+- **Systemperspektiv:** Vad händer i resten av systemet när den här koden ändras? Vem mer använder datan?
+- **Robust:** Får spelaren ett tydligt besked när något går fel? Finns loggning som hjälper vid felsökning?
+- **Vid fel:** Vad var symptomet och vad var rotorsaken? Hör felet hemma i [FELSOKNING.md](FELSOKNING.md)?
+
+AI-assistenten ger inte svaren på frågorna. Det är jag som formulerar avvägningen. Det är där övningen ligger.
+
 ## Bra frågor att ställa
 
 - "Förklara utan kod hur jag borde lösa X."
@@ -130,3 +146,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 | 2026-11-02 | dotnet format i CI | Claude Code | Ta över | Lade till Bunkerbyn.csproj i dotnet format i build.yml och setup/README.md, eftersom mappen har både .csproj och .sln | –   |
 >>>>>>> origin/main
 | 2026-11-02 | Kamera (#2) | Claude Code | Ta över | Skrev zoom med mushjulet, lutning och rotation med musen, och mjuk rörelse med mål och Lerp i CameraRig.cs. WASD och Q/E skrev Lukas själv | –   |
+| 2026-11-03 | Kursens arbetssätt | Claude Code | Ta över | Skapade BESLUT.md med mall och exemplet B1, FELSOKNING.md med mall, granskningsfrågor efter kursen Problemlösning och regeln om inga singletons i AGENTS.md | –   |
