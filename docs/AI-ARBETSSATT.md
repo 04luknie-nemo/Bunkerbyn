@@ -147,3 +147,4 @@ Här loggas varje gång en AI-assistent skriver kod som hamnar i repot. Kolumnen
 >>>>>>> origin/main
 | 2026-11-02 | Kamera (#2) | Claude Code | Ta över | Skrev zoom med mushjulet, lutning och rotation med musen, och mjuk rörelse med mål och Lerp i CameraRig.cs. WASD och Q/E skrev Lukas själv | –   |
 | 2026-11-03 | Kursens arbetssätt | Claude Code | Ta över | Skapade BESLUT.md med mall och exemplet B1, FELSOKNING.md med mall, granskningsfrågor efter kursen Problemlösning och regeln om inga singletons i AGENTS.md | –   |
+| 2026-11-12 | Versioner, berättaren och händelser | Claude Code | Ta över | Delade upp designen i demo, version 1 och senare, och lade till pitch, berättaren och händelsekort i docs/DESIGN.md | –   |

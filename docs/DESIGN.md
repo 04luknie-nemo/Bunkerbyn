@@ -22,6 +22,55 @@ Närmaste förebilder:
 
 Inget färdigt spel gör detta bra. Metro 2033: Wars hade idén om att ta station efter station men fick dålig kritik. Until We Die handlar om att försvara en station, inte att växa.
 
+## Versioner
+
+Designen nedan beskriver hela visionen. Den byggs i tre steg.
+
+| Steg | Vad | För vem | Frågan det svarar på |
+|---|---|---|---|
+| Demo | Milstolpe 1 till 10 i README, med enkla former | Mig själv och några testare | Är spelet roligt? |
+| Version 1 | Första offentliga versionen, early access | Främlingar som betalar | Vill folk köpa det? |
+| Senare | Uppdateringar efter version 1 | Spelarna | Vad vill de ha mer av? |
+
+**Pitch:** RimWorld i Stockholms tunnelbana, där ljuset håller dig vid liv och ljudet kan döda dig.
+
+### Version 1 innehåller
+
+*Stationen*
+- Kungsträdgården med bygga, ta isär och murar: barrikad och svetsad port.
+- Invånare med behov, färdigheter, personlighet och gångstil.
+- Chef, moral, val och tre till fyra lagar.
+- Odling, lager, generator, vatten och luft i korta kedjor.
+- Död med kropp och dagbok, och enkel sjukdom.
+
+*Världen*
+- Tre till fyra tunnelsträckor byggda av moduler.
+- Ljus, mörker, synfält och ljud.
+- En ytkarta: parken Kungsträdgården ovanför stationen.
+- En till två grannstationer, bara handel via karavaner.
+
+*Spelkänslan*
+- Berättaren, som styr när kriser kommer, med två svårighetsgrader.
+- Händelsekort, 30 till 50 stycken.
+
+*Ett färdigt spel*
+- Riktig low poly-grafik, gränssnitt, sparning, ljud och musik.
+- Inställningar och tillgänglighet.
+- Engelska texter och en Steam-sida.
+
+### Kommer senare
+
+- Hela nätkartan med kontroll, utposter och expansion.
+- Föreståndare för stationer du tar över.
+- Forskning, bibliotek och längre kedjor som dressin.
+- Slussmuren.
+- Relationer och barn som föds.
+- Råd, inflytande och fler lagar.
+- De brända och de förvildade.
+- Moddar och fler startscenarier.
+
+Allt i "Kommer senare" är fortfarande designat nedan, så att strukturen klarar det. Men det byggs inte förrän version 1 är släppt.
+
 ## Värld
 
 - Stockholm, sju år efter ett kärnvapenkrig.
@@ -517,6 +566,31 @@ Tunnlar leder ljud långt. Ljudet följer tunneln runt hörn men går inte genom
 - Ficklampan syns långt men är tyst. Facklan syns kort men knastrar.
 - Ett skott löser problemet framför dig men kan locka ett större från grannsträckan.
 
+## Berättaren
+
+En berättare styr när kriser och händelser kommer, så att spelaren varken drunknar i problem eller har tråkigt. Förebilden är berättarna i RimWorld.
+
+- Berättaren följer stationens läge: mat, moral, försvar och hur länge sedan förra krisen var.
+- Efter en svår kris får stationen andrum. Efter en lugn period ökar risken.
+- Den väljer vad som händer ur en pott av händelser och agenter på nätet: en flock som går mot stationen, en karavan, en sjukdom, en flykting vid porten.
+- Version 1 har två berättare: en lugnare som ger mer andrum, och en hårdare.
+- Berättaren är ett utbytbart beteende bakom ett gemensamt gränssnitt, och väljs när spelet startar.
+- All slump går genom världens slumpkälla, så samma frö ger samma kriser.
+
+## Händelser
+
+Händelsekort är korta situationer där spelaren väljer, som i Frostpunk. Exempel:
+
+> En flykting står vid porten och hostar. Släpp in henne?
+> - Släpp in: en invånare till, men risk för smitta.
+> - Karantän i slussen först: kostar mat och en vakt i tre dagar.
+> - Skicka bort: ingen risk, men moralen sjunker hos dem som håller med Nadia.
+
+- Varje kort är data: text, villkor för när det kan dyka upp, och val med följder.
+- Följderna påverkar moral, resurser, relationer, lagar och sjukdom. Personligheter reagerar olika på samma val.
+- Texterna går genom översättningssystemet, som alla spelets texter.
+- Version 1 har 30 till 50 kort. Fler läggs till i uppdateringar, och med moddar.
+
 ## Mål
 
 Spelet är oändligt. Fyra spår ger riktning:
@@ -565,6 +639,7 @@ Ett långsiktigt mål som passar oändlig speltid: att stationen överlever en g
 - **Sparning:** Allt i simuleringen går att spara som JSON. Objekt pekar på varandra med id, inte med referenser. Id är `int` från en gemensam räknare i `World`, sparas med världen och återanvänds aldrig. Ett fält som pekar på ett annat objekt heter som objektet plus `Id`, till exempel `ResidentId`, `StationId` eller `HomeStationId`. Det egna id-fältet heter bara `Id`. Sparfilen har ett versionsnummer.
 - **Slump:** All slump går genom en egen slumpgenerator med frö, vars läge sparas med världen. Laddar du om samma morgon blir utfallet detsamma. Tunnelsträckor får egna strömmar, till exempel världsfrö kombinerat med sträckans id. Godots och .NET:s slump används aldrig i simuleringen.
 - **Texter:** Spelets texter går genom Godots översättningssystem med PO-filer, där engelsk text är nyckeln. Simuleringen skapar händelser med data, aldrig färdiga texter. Vyn gör om händelserna till text.
+- Eftersom innehåll är data blir det enkelt att stödja moddar senare. Det byggs inte i version 1, men inget ska stå i vägen för det.
 - Innehåll är data, inte kod. Föremål, byggnader, verkstäder, karaktärsdrag och lagar definieras i datafiler, till exempel Godot-resurser eller JSON. En ny vara läggs till utan att koden ändras.
 - Utility AI är ett generellt system med handlingar som räknar fram poäng. Samma system används för invånare, röstning och föreståndare.
 - `Station` har plats för en ledare och en lista med lagar från början, även om de används först senare.
